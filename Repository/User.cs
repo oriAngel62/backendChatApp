@@ -10,18 +10,23 @@ namespace Repository
     public class User
     {
         public List<Contact> listContacts { get; set; }
-        public int id { get; set; }
+        public string idUser { get; set; }
 
-    public User(int id)
+    public User(string id)
         {
-            this.id = id;
-            listContacts = new List<Contact>() { new Contact() { Id = 1, Last = "abc", LastDate = DateTime.Now, MessageList = {new Message()
+            idUser = id;
+            listContacts = new List<Contact>() { new Contact() { Id = "Ori", Last = "abc", LastDate = DateTime.Now, MessageList = new List<Message>() {new Message()
             {Content = "hi",Type = Domain.Type.text,Id =1,Created = DateTime.Now,Sent=true } ,new Message() {Content = "hi 2 u 2",
                 Type = Domain.Type.text,Id =2,Created = DateTime.Now,Sent=false }}, NickName = "yes", Server = "abc" },
-                        new Contact() { Id = 2, Last = "abcd", LastDate = DateTime.Now, MessageList = {new Message()
+                        new Contact() { Id = "David", Last = "abcd", LastDate = DateTime.Now, MessageList = new List<Message>() {new Message()
             {Content = "hi",Type = Domain.Type.text,Id =1,Created = DateTime.Now,Sent=true } ,new Message() {Content = "hi 2 u 2",
                 Type = Domain.Type.text,Id =2,Created = DateTime.Now,Sent=false }}, NickName = "yes", Server = "abc" }
                         };
         }
+
+        //public List<Message> GetMessages(int idContact)
+        //{
+        //    return listContacts[0].MessageList;
+        //}
     }
 }

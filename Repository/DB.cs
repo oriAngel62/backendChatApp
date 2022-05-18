@@ -7,7 +7,7 @@ namespace Repository
         public DB()
         {
             userList = new List<User>();
-            userList.Add(new User(1));
+            userList.Add(new User("New"));
 
         }
 

@@ -5,7 +5,7 @@ namespace Domain
     public class Contact
     {
         //user name
-        public int Id { get; set; }
+        public string Id { get; set; }
         //nickname
         public string NickName { get; set; }
         public string Server { get; set; }
@@ -18,6 +18,8 @@ namespace Domain
         public DateTime LastDate { get; set; }
 
         public List<Message> MessageList { get; set; }
+
+
 
 
     }

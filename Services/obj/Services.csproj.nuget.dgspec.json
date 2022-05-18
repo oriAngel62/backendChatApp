@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Services\\Services.csproj": {}
+    "C:\\Users\\ori\\Desktop\\serveSide\\Services\\Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Domain\\Domain.csproj": {
+    "C:\\Users\\ori\\Desktop\\serveSide\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\ori\\Desktop\\serveSide\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\ori\\Desktop\\serveSide\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\ori\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ori\\Desktop\\serveSide\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\David\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ori\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,21 +57,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Repository\\Repository.csproj": {
+    "C:\\Users\\ori\\Desktop\\serveSide\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\ori\\Desktop\\serveSide\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Repository\\obj\\",
+        "projectPath": "C:\\Users\\ori\\Desktop\\serveSide\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\ori\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ori\\Desktop\\serveSide\\Repository\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\David\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ori\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,8 +88,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Domain\\Domain.csproj"
+              "C:\\Users\\ori\\Desktop\\serveSide\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\ori\\Desktop\\serveSide\\Domain\\Domain.csproj"
               }
             }
           }
@@ -112,21 +118,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Services\\Services.csproj": {
+    "C:\\Users\\ori\\Desktop\\serveSide\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\ori\\Desktop\\serveSide\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Services\\obj\\",
+        "projectPath": "C:\\Users\\ori\\Desktop\\serveSide\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\ori\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ori\\Desktop\\serveSide\\Services\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\David\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ori\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -140,8 +149,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\David\\Desktop\\mitkadem2-project\\oriAngel62\\backendChatApp\\Repository\\Repository.csproj"
+              "C:\\Users\\ori\\Desktop\\serveSide\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\ori\\Desktop\\serveSide\\Repository\\Repository.csproj"
               }
             }
           }
@@ -170,7 +179,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

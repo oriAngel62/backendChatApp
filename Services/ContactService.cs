@@ -8,10 +8,12 @@ using Repository;
 
 namespace Services
 {
-    public class ContactService : IContactService
+    public class ContactService : IItemService
     {
         private DB d = new DB();
-        public Contact GetContact(int id)
+
+        
+        public Contact GetContact(string id)
         {
             return d.userList[0].listContacts.Where(x => x.Id == id).FirstOrDefault();
         }
@@ -22,5 +24,29 @@ namespace Services
 
         }
 
+        public List<Message> GetMessages(string idContact)
+        {
+            for (int i=0; i < d.userList[0].listContacts.Count; i++)
+            {
+                if (d.userList[0].listContacts[i].Id == idContact)
+                {
+                    return d.userList[0].listContacts[i].MessageList;
+                }
+            }
+            return null;
+        }
+        public Message GetMessage(string idContact,int idMessage)
+        {
+            for (int i = 0; i < d.userList[0].listContacts.Count; i++)
+            {
+                if (d.userList[0].listContacts[i].Id == idContact)
+                {
+                    return d.userList[0].listContacts[i].MessageList.Where(x => x.Id == idMessage).FirstOrDefault();
+                }
+            }
+            return null;
+        }
     }
-}
+
+    }
+
