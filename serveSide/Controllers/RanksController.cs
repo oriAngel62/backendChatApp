@@ -2,45 +2,29 @@
 using Microsoft.AspNetCore.Mvc;
 using Services;
 
-namespace API.Controllers
+namespace MVC.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ContactsAPIController : Controller
+    public class RanksController : Controller
     {
-        private IContactService contactService;
-        // GET: ContactsController
-
-        public ContactsAPIController()
+        // GET: RanksController
+        public ActionResult Index()
         {
-            contactService = new ContactService();
-        }
-        [HttpGet]
-        public async Task<ActionResult> Index()
-        {
-            return Json(contactService.GetContacts());
+            return View();
         }
 
-       
-        public async Task<ActionResult> Index2()
+        // GET: RanksController/Details/5
+        public ActionResult Details(int id)
         {
-            return Json(contactService.GetContacts());
+            return View();
         }
 
-        // GET: ContactsController/Details/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult> Details(int id)
-        {
-            return Json(contactService.GetContact(id));
-        }
-
-        // GET: ContactController/Create
+        // GET: RanksController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: ContactController/Create
+        // POST: RanksController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -55,13 +39,13 @@ namespace API.Controllers
             }
         }
 
-        // GET: ContactController/Edit/5
+        // GET: RanksController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: ContactController/Edit/5
+        // POST: RanksController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -76,13 +60,13 @@ namespace API.Controllers
             }
         }
 
-        // GET: ContactController/Delete/5
+        // GET: RanksController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: ContactController/Delete/5
+        // POST: RanksController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

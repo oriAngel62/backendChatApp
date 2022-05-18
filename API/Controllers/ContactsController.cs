@@ -15,10 +15,7 @@ namespace API.Controllers
         {
             contactService = new ContactService();
         }
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+
 
         [HttpGet]
         public async Task<ActionResult> Index()
@@ -26,19 +23,19 @@ namespace API.Controllers
             return Json(contactService.GetContacts());
         }
 
-        // GET: ContactsController/Details/5
-        
-        [HttpGet("[action]/{id}")]
-        public async Task<ActionResult> Details(int id)
-        {
-            return Json(contactService.GetContact(id));
-        }
+        //    // GET: ContactsController/Details/5
 
-        [HttpPost]
+        //    [HttpGet("[action]/{id}")]
+        //    public async Task<ActionResult> Details(int id)
+        //    {
+        //        return Json(contactService.GetContact(id));
+        //    }
 
-        public void Create()
-        {
+        //    [HttpPost]
 
-        }
+        //    public void Create()
+        //    {
+
+        //    }
     }
 }
