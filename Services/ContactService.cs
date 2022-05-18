@@ -13,12 +13,12 @@ namespace Services
         private DB d = new DB();
         public Contact GetContact(int id)
         {
-            return d.listContacts.Where(x => x.Id == id).FirstOrDefault();
+            return d.userList[0].listContacts.Where(x => x.Id == id).FirstOrDefault();
         }
         public List<Contact> GetContacts()
         {
 
-            return d.listContacts;
+            return d.userList[0].listContacts;
 
         }
 

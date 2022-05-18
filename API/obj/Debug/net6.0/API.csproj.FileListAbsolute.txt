@@ -31,3 +31,13 @@ C:\Users\ori\Desktop\serveSide\API\obj\Debug\net6.0\refint\API.dll
 C:\Users\ori\Desktop\serveSide\API\obj\Debug\net6.0\API.pdb
 C:\Users\ori\Desktop\serveSide\API\obj\Debug\net6.0\API.genruntimeconfig.cache
 C:\Users\ori\Desktop\serveSide\API\obj\Debug\net6.0\ref\API.dll
+C:\Users\David\Desktop\mitkadem2-project\oriAngel62\backendChatApp\API\obj\Debug\net6.0\API.csproj.AssemblyReference.cache
+C:\Users\David\Desktop\mitkadem2-project\oriAngel62\backendChatApp\API\obj\Debug\net6.0\API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\David\Desktop\mitkadem2-project\oriAngel62\backendChatApp\API\obj\Debug\net6.0\API.AssemblyInfoInputs.cache
+C:\Users\David\Desktop\mitkadem2-project\oriAngel62\backendChatApp\API\obj\Debug\net6.0\API.AssemblyInfo.cs
+C:\Users\David\Desktop\mitkadem2-project\oriAngel62\backendChatApp\API\obj\Debug\net6.0\API.csproj.CoreCompileInputs.cache
+C:\Users\David\Desktop\mitkadem2-project\oriAngel62\backendChatApp\API\obj\Debug\net6.0\API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\David\Desktop\mitkadem2-project\oriAngel62\backendChatApp\API\obj\Debug\net6.0\API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\David\Desktop\mitkadem2-project\oriAngel62\backendChatApp\API\obj\Debug\net6.0\API.dll
+C:\Users\David\Desktop\mitkadem2-project\oriAngel62\backendChatApp\API\obj\Debug\net6.0\refint\API.dll
+C:\Users\David\Desktop\mitkadem2-project\oriAngel62\backendChatApp\API\obj\Debug\net6.0\API.pdb
