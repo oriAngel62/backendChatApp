@@ -23,19 +23,19 @@ namespace API.Controllers
             return Json(contactService.GetContacts());
         }
 
-        //    // GET: ContactsController/Details/5
+        // GET: ContactsController/Details/5
 
-        //    [HttpGet("[action]/{id}")]
-        //    public async Task<ActionResult> Details(int id)
-        //    {
-        //        return Json(contactService.GetContact(id));
-        //    }
+        [HttpGet("[action]/{id}")]
+        public async Task<ActionResult> Details(int id)
+        {
+            return Json(contactService.GetContact(id));
+        }
 
-        //    [HttpPost]
+        [HttpPost]
 
-        //    public void Create()
-        //    {
+        public void Create()
+        {
 
-        //    }
+        }
     }
 }
