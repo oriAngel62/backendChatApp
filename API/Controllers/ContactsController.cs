@@ -46,9 +46,9 @@ namespace API.Controllers
         }
         [HttpPost]
 
-        public void Create()
+        public Task<ActionResult<Contact>> Create(Contact contact)
         {
-
+            
         }
     }
 }

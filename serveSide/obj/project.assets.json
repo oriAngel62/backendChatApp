@@ -63,23 +63,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ori\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\David\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ori\\Desktop\\serveSide\\serveSide\\MVC.csproj",
+      "projectUniqueName": "C:\\Users\\David\\Desktop\\workingOnProjectPart2\\serveSide\\MVC.csproj",
       "projectName": "MVC",
-      "projectPath": "C:\\Users\\ori\\Desktop\\serveSide\\serveSide\\MVC.csproj",
-      "packagesPath": "C:\\Users\\ori\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ori\\Desktop\\serveSide\\serveSide\\obj\\",
+      "projectPath": "C:\\Users\\David\\Desktop\\workingOnProjectPart2\\serveSide\\MVC.csproj",
+      "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\David\\Desktop\\workingOnProjectPart2\\serveSide\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ori\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\David\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -93,8 +89,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ori\\Desktop\\serveSide\\Services\\Services.csproj": {
-              "projectPath": "C:\\Users\\ori\\Desktop\\serveSide\\Services\\Services.csproj"
+            "C:\\Users\\David\\Desktop\\workingOnProjectPart2\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\David\\Desktop\\workingOnProjectPart2\\Services\\Services.csproj"
             }
           }
         }
@@ -126,7 +122,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

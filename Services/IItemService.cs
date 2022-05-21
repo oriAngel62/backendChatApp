@@ -11,6 +11,8 @@ namespace Services
         public Message GetMessage(string idContact, int idMessage);
         public List<Message> GetMessages(string idContact);
 
+        public void AddContact(Contact contact);
+
         //POST = ADD CONTACT ?
     }
 }

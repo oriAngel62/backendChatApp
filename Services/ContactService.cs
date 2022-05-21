@@ -46,6 +46,11 @@ namespace Services
             }
             return null;
         }
+
+        public void AddContact(Contact contact)
+        {
+            d.userList[0].listContacts.Add(contact);
+        }
     }
 
     }
