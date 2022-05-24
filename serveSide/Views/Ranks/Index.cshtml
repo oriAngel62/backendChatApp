@@ -12,6 +12,9 @@
 <table class="table">
     <thead>
         <tr>
+             <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.RankNum)
             </th>
@@ -27,6 +30,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <th>
+                @Html.DisplayFor(model => item.UserName)
+            </th>
             <td>
                 @Html.DisplayFor(modelItem => item.RankNum)
             </td>
