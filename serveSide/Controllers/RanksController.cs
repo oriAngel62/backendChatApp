@@ -1,84 +1,164 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Services;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Domain;
+using MVC.Data;
 
 namespace MVC.Controllers
 {
     public class RanksController : Controller
     {
-        // GET: RanksController
-        public ActionResult Index()
+        private readonly MVCContext _context;
+
+        public RanksController(MVCContext context)
+        {
+            _context = context;
+        }
+
+        // GET: Ranks
+        public async Task<IActionResult> Index()
+        {
+              return _context.Rank != null ? 
+                          View(await _context.Rank.ToListAsync()) :
+                          Problem("Entity set 'MVCContext.Rank'  is null.");
+        }
+
+        // GET: Ranks/Details/5
+        public async Task<IActionResult> Details(string id)
+        {
+            if (id == null || _context.Rank == null)
+            {
+                return NotFound();
+            }
+
+            var rank = await _context.Rank
+                .FirstOrDefaultAsync(m => m.UserName == id);
+            if (rank == null)
+            {
+                return NotFound();
+            }
+
+            return View(rank);
+        }
+
+        // GET: Ranks/Create
+        public IActionResult Create()
         {
             return View();
         }
 
-        // GET: RanksController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: RanksController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: RanksController/Create
+        // POST: Ranks/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Create([Bind("UserName,RankNum,Details")] Rank rank)
         {
-            try
+            if (ModelState.IsValid)
             {
+                rank.Created = DateTime.Now;
+                _context.Add(rank);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+            return View(rank);
         }
 
-        // GET: RanksController/Edit/5
-        public ActionResult Edit(int id)
+        // GET: Ranks/Edit/5
+        public async Task<IActionResult> Edit(string id)
         {
-            return View();
+            if (id == null || _context.Rank == null)
+            {
+                return NotFound();
+            }
+
+            var rank = await _context.Rank.FindAsync(id);
+            if (rank == null)
+            {
+                return NotFound();
+            }
+            return View(rank);
         }
 
-        // POST: RanksController/Edit/5
+        // POST: Ranks/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(string id, [Bind("UserName,RankNum,Details,Created")] Rank rank)
         {
-            try
+            if (id != rank.UserName)
             {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(rank);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!RankExists(rank.UserName))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+            return View(rank);
         }
 
-        // GET: RanksController/Delete/5
-        public ActionResult Delete(int id)
+        // GET: Ranks/Delete/5
+        public async Task<IActionResult> Delete(string id)
         {
-            return View();
+            if (id == null || _context.Rank == null)
+            {
+                return NotFound();
+            }
+
+            var rank = await _context.Rank
+                .FirstOrDefaultAsync(m => m.UserName == id);
+            if (rank == null)
+            {
+                return NotFound();
+            }
+
+            return View(rank);
         }
 
-        // POST: RanksController/Delete/5
-        [HttpPost]
+        // POST: Ranks/Delete/5
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            try
+            if (_context.Rank == null)
             {
-                return RedirectToAction(nameof(Index));
+                return Problem("Entity set 'MVCContext.Rank'  is null.");
             }
-            catch
+            var rank = await _context.Rank.FindAsync(id);
+            if (rank != null)
             {
-                return View();
+                _context.Rank.Remove(rank);
             }
+            
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool RankExists(string id)
+        {
+          return (_context.Rank?.Any(e => e.UserName == id)).GetValueOrDefault();
         }
     }
 }

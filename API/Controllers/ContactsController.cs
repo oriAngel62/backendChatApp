@@ -44,11 +44,11 @@ namespace API.Controllers
         {
             return Json(contactService.GetMessage(id,id2));
         }
-        [HttpPost]
+        //[HttpPost]
 
-        public Task<ActionResult<Contact>> Create(Contact contact)
-        {
+        //public Task<ActionResult<Contact>> Create(Contact contact)
+        //{
             
-        }
+        //}
     }
 }
