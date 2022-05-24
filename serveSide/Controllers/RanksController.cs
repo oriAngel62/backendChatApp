@@ -27,6 +27,23 @@ namespace MVC.Controllers
                           Problem("Entity set 'MVCContext.Rank'  is null.");
         }
 
+
+        public async Task<IActionResult> Search()
+        {
+            return _context.Rank != null ?
+                        View(await _context.Rank.ToListAsync()) :
+                        Problem("Entity set 'MVCContext.Rank'  is null.");
+        }
+        [HttpPost]
+        public async Task<IActionResult> Search(string query)
+        {
+            var q = from rank in _context.Rank
+                    where rank.UserName.Contains(query)
+                    select rank;
+            return _context.Rank != null ?
+                        View(await q.ToListAsync()) :
+                        Problem("Entity set 'MVCContext.Rank'  is null.");
+        }
         // GET: Ranks/Details/5
         public async Task<IActionResult> Details(string id)
         {
