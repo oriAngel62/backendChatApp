@@ -20,42 +20,36 @@ namespace Services
 
         public async Task<Contact> GetContact(string id)
         {
-            return await _context.Contact.Where(x => x.Id == id).FirstOrDefaultAsync();
+            return await _context.Contact.FirstOrDefaultAsync(item => item.UserNameNavigation.UserName == userName);
         }
-        public async Task<List<Contact>> GetContacts()
+        public async Task<List<Contact>> GetContacts(string userName)
         {
 
-            return await _context.Contact.ToListAsync();
+            return await _context.Contact.FirstOrDefaultAsync(item => item.UserNameNavigation.UserName == userName);
 
         }
 
-        public List<Message> GetMessages(string idContact)
-        {
-            for (int i=0; i < d.userList[0].listContacts.Count; i++)
-            {
-                if (d.userList[0].listContacts[i].Id == idContact)
-                {
-                    return d.userList[0].listContacts[i].MessageList;
-                }
-            }
-            return null;
-        }
-        public Message GetMessage(string idContact,int idMessage)
-        {
-            for (int i = 0; i < d.userList[0].listContacts.Count; i++)
-            {
-                if (d.userList[0].listContacts[i].Id == idContact)
-                {
-                    return d.userList[0].listContacts[i].MessageList.Where(x => x.Id == idMessage).FirstOrDefault();
-                }
-            }
-            return null;
-        }
+        //public async Task<Message> GetMessages(string contactId)
+        //{
 
-        public void AddContact(Contact contact)
-        {
-            d.userList[0].listContacts.Add(contact);
-        }
+        //    return await _context..Contact.Include(x => x.Id).FirstOrDefaultAsync(u => u.Id == user.Id);
+        //}
+        //public Message GetMessage(string idContact,int idMessage)
+        //{
+        //    for (int i = 0; i < d.userList[0].listContacts.Count; i++)
+        //    {
+        //        if (d.userList[0].listContacts[i].Id == idContact)
+        //        {
+        //            return d.userList[0].listContacts[i].MessageList.Where(x => x.Id == idMessage).FirstOrDefault();
+        //        }
+        //    }
+        //    return null;
+        //}
+
+        //public void AddContact(Contact contact)
+        //{
+        //    d.userList[0].listContacts.Add(contact);
+        //}
 
 
     }

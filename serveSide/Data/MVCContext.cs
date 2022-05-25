@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Domain;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace MVC.Data
 {
@@ -16,7 +11,6 @@ namespace MVC.Data
 
         public DbSet<Domain.Rank>? Rank { get; set; }
 
-        public DbSet<Domain.Rank>? Table { get; set; }
 
     }
 }

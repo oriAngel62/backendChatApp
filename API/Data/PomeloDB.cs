@@ -15,7 +15,7 @@ namespace API.Data
         }
 
         public DbSet<Domain.Contact>? Contact { get; set; }
-        public DbSet<Domain.UserDetails>? UserDetails { get; set; }
+        public DbSet<Domain.User>? UserDetails { get; set; }
 
     }
 }
