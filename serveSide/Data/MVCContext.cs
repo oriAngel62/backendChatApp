@@ -15,5 +15,8 @@ namespace MVC.Data
         }
 
         public DbSet<Domain.Rank>? Rank { get; set; }
+
+        public DbSet<Domain.Rank>? Table { get; set; }
+
     }
 }

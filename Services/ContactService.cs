@@ -5,14 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain;
 using Repository;
+using API.Data;
+
 
 namespace Services
 {
     public class ContactService : IItemService
     {
-        private DB d = new DB();
+        private readonly PomeloDB _context;
 
-        
+        public ContactService()
+        {
+
+        }
+
         public Contact GetContact(string id)
         {
             return d.userList[0].listContacts.Where(x => x.Id == id).FirstOrDefault();

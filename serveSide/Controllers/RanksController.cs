@@ -16,6 +16,7 @@ namespace MVC.Controllers
 
         public RanksController(MVCContext context)
         {
+       
             _context = context;
         }
 
