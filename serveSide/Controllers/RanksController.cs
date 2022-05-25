@@ -37,13 +37,18 @@ namespace MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Search(string query)
         {
+            if (string.IsNullOrEmpty(query))
+            {
+                return View(await _context.Rank.ToListAsync());
+            }
             var q = from rank in _context.Rank
-                    where rank.UserName.Contains(query)
+                    where rank.UserName.StartsWith(query)             
                     select rank;
-            return _context.Rank != null ?
-                        View(await q.ToListAsync()) :
-                        Problem("Entity set 'MVCContext.Rank'  is null.");
+            return View(await q.ToListAsync());
+                       
         }
+ 
+      
         // GET: Ranks/Details/5
         public async Task<IActionResult> Details(string id)
         {

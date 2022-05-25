@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "q3Zzcnq7Q64nliNWdp8qa47mnqTDHtqPo7fnuuWtDeg=",
+  "Hash": "PtitHOR2pNYN9SZVIe3J6gYI0GtSDf9rHXYH1NBdeGo=",
   "Source": "MVC",
   "BasePath": "_content/MVC",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\ori\\Desktop\\serveSide\\serveSide\\wwwroot\\js\\search.js",
+      "SourceId": "MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ori\\Desktop\\serveSide\\serveSide\\wwwroot\\",
+      "BasePath": "_content/MVC",
+      "RelativePath": "js/search.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\search.js"
     },
     {
       "Identity": "C:\\Users\\ori\\Desktop\\serveSide\\serveSide\\wwwroot\\js\\site.js",
