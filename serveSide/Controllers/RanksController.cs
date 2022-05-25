@@ -39,7 +39,7 @@ namespace MVC.Controllers
         {
             if (string.IsNullOrEmpty(query))
             {
-                return View(await _context.Rank.ToListAsync());
+                return RedirectToAction(nameof(Index));
             }
             var q = from rank in _context.Rank
                     where rank.UserName.StartsWith(query)             
@@ -82,9 +82,18 @@ namespace MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                rank.Created = DateTime.Now;
-                _context.Add(rank);
-                await _context.SaveChangesAsync();
+                var user = _context.Rank.Where(x => x.UserName == rank.UserName).FirstOrDefault();
+                    rank.Created = DateTime.Now;
+                if (user != null)
+                {
+                    //error => user already exist
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    _context.Add(rank);
+                }
+                    await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(rank);
@@ -111,7 +120,7 @@ namespace MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("UserName,RankNum,Details,Created")] Rank rank)
+        public async Task<IActionResult> Edit(string id, [Bind("UserName,RankNum,Details")] Rank rank)
         {
             if (id != rank.UserName)
             {
@@ -122,6 +131,7 @@ namespace MVC.Controllers
             {
                 try
                 {
+                    rank.Created = DateTime.Now;
                     _context.Update(rank);
                     await _context.SaveChangesAsync();
                 }
