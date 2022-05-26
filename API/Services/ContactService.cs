@@ -59,8 +59,8 @@ namespace Services
         public async void DeleteContact(string userId,string contactId)
         {
             //async Contact c = GetContact(id);
-            var x = (Contact)_context.Contact.Where(item => item.User.UserName == userId && item.Id == contactId);
-            _context.Contact.Remove(x);
+            List<Contact> x = await _context.Contact.Where(item => (item.User.UserName == userId) && (item.Id == contactId)).ToListAsync();
+            _context.Contact.Remove(x[0]);
             await _context.SaveChangesAsync();
         }
 
@@ -84,7 +84,7 @@ namespace Services
         public async void DeleteMessage(int idMessage)
         {
             //async Contact c = GetContact(id);
-            var x =(Message)_context.Message.Where(item =>  item.Id == idMessage);
+            Message x = await _context.Message.FindAsync(idMessage);
             _context.Message.Remove(x);
             await _context.SaveChangesAsync();
         }

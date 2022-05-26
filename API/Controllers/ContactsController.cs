@@ -106,11 +106,12 @@ namespace API.Controllers
 
 
         [HttpPost("[action]/{id}/messages")]
-        public async Task<IActionResult> CreateMessage([Bind("Id, Type, Content , Sent")] Message message)
+        public async Task<IActionResult> CreateMessage([Bind("Content , Sent")] Message message)
         {
             //add from to (sent) id and login name 
             if (ModelState.IsValid)
             {
+                message.Created = DateTime.Now;
                 contactService.AddMessage(message);
                 return Ok();
             }
