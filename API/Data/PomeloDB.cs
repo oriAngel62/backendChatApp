@@ -19,7 +19,7 @@ namespace API.Data
         }
 
         public DbSet<Domain.Contact>? Contact { get; set; }
-        public DbSet<Domain.User>? UserDetails { get; set; }
+        public DbSet<Domain.User>? User { get; set; }
         public DbSet<Domain.Message>? Message { get; set; }
 
     }

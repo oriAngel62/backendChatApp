@@ -21,7 +21,7 @@ namespace Services
 
         public async Task<Contact> GetContact(string userId, string id)
         {
-            return await _context.Contact.FirstOrDefaultAsync(item => (item.Id == id) && item.User.UserName== userId);
+            return await _context.Contact.FirstOrDefaultAsync(item => (item.Id == id) && item.User.UserName == userId);
         }
         public async Task<List<Contact>> GetContacts(string user)
         {

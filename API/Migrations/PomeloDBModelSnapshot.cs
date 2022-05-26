@@ -25,10 +25,9 @@ namespace API.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("Last")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("LastDate")
+                    b.Property<DateTime?>("LastDate")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("NickName")
@@ -40,11 +39,8 @@ namespace API.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<string>("userName")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
@@ -66,26 +62,28 @@ namespace API.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("Created")
+                    b.Property<DateTime?>("Created")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("From")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<string>("FromUserName")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<bool>("Sent")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<string>("To")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<string>("ToUserName")
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<int>("Type")
+                    b.Property<int?>("Type")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ContactId");
+
+                    b.HasIndex("FromUserName");
+
+                    b.HasIndex("ToUserName");
 
                     b.ToTable("Message");
                 });
@@ -109,14 +107,18 @@ namespace API.Migrations
 
                     b.HasKey("UserName");
 
-                    b.ToTable("UserDetails");
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("Domain.Contact", b =>
                 {
-                    b.HasOne("Domain.User", null)
+                    b.HasOne("Domain.User", "User")
                         .WithMany("ContactsList")
-                        .HasForeignKey("UserName");
+                        .HasForeignKey("UserName")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Domain.Message", b =>
@@ -124,6 +126,18 @@ namespace API.Migrations
                     b.HasOne("Domain.Contact", null)
                         .WithMany("MessageList")
                         .HasForeignKey("ContactId");
+
+                    b.HasOne("Domain.User", "From")
+                        .WithMany()
+                        .HasForeignKey("FromUserName");
+
+                    b.HasOne("Domain.User", "To")
+                        .WithMany()
+                        .HasForeignKey("ToUserName");
+
+                    b.Navigation("From");
+
+                    b.Navigation("To");
                 });
 
             modelBuilder.Entity("Domain.Contact", b =>

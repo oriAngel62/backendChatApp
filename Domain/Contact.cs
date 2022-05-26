@@ -14,12 +14,12 @@ namespace Domain
 
         //last message
         //can be null
-        public string Last { get; set; }
+        public string? Last { get; set; }
         //can be null
 
-        public DateTime LastDate { get; set; }
+        public DateTime? LastDate { get; set; }
 
-        public List<Message> MessageList { get; set; }
+        public List<Message>? MessageList { get; set; }
 
 
 

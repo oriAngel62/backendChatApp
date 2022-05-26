@@ -141,6 +141,16 @@ namespace API.Controllers
             return BadRequest();
         }
 
+
+        [HttpGet("[action]/time")]
+        public async Task<ActionResult> GetTime()
+        {
+            return Json(DateTime.Now);
+        }
+
+       
+
+
         //// GET: Contacts1/Create
         //public IActionResult Create()
         //{
