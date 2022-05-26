@@ -21,17 +21,18 @@ namespace Services
 
         public async Task<Contact> GetContact(string userId, string id)
         {
-            return await _context.Contact.FirstOrDefaultAsync(item => (item.Id == id) && item.User == userId);
+            return await _context.Contact.FirstOrDefaultAsync(item => (item.Id == id) && item.UserName == userId);
         }
         public async Task<List<Contact>> GetContacts(string user)
         {
-            
+
             //List<Contact> c= await _context.Contact.Where(item => item.User.UserName == user).ToListAsync();
             //if (c == null)
             //{
             //    return null;
             //}
-            return await _context.Contact.Where(item => item.User == user).ToListAsync();
+             List < Contact > c = await _context.Contact.Where(item => item.UserName == user).ToListAsync();
+            return c;
         }
 
         public async Task<List<Message>> GetMessages(string user, string contact)
@@ -66,7 +67,7 @@ namespace Services
         public async void DeleteContact(string userId,string contactId)
         {
             //async Contact c = GetContact(id);
-            List<Contact> x = await _context.Contact.Where(item => (item.User == userId) && (item.Id == contactId)).ToListAsync();
+            List<Contact> x = await _context.Contact.Where(item => (item.UserName == userId) && (item.Id == contactId)).ToListAsync();
             _context.Contact.Remove(x[0]);
             await _context.SaveChangesAsync();
         }

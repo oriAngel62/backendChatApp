@@ -39,12 +39,14 @@ namespace API.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserName1")
                         .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserName");
+                    b.HasIndex("UserName1");
 
                     b.ToTable("Contact");
                 });
@@ -65,25 +67,21 @@ namespace API.Migrations
                     b.Property<DateTime?>("Created")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("FromUserName")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("From")
+                        .HasColumnType("longtext");
 
                     b.Property<bool>("Sent")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<string>("ToUserName")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("To")
+                        .HasColumnType("longtext");
 
-                    b.Property<int?>("Type")
-                        .HasColumnType("int");
+                    b.Property<string>("Type")
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ContactId");
-
-                    b.HasIndex("FromUserName");
-
-                    b.HasIndex("ToUserName");
 
                     b.ToTable("Message");
                 });
@@ -112,13 +110,9 @@ namespace API.Migrations
 
             modelBuilder.Entity("Domain.Contact", b =>
                 {
-                    b.HasOne("Domain.User", "User")
+                    b.HasOne("Domain.User", null)
                         .WithMany("ContactsList")
-                        .HasForeignKey("UserName")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
+                        .HasForeignKey("UserName1");
                 });
 
             modelBuilder.Entity("Domain.Message", b =>
@@ -126,18 +120,6 @@ namespace API.Migrations
                     b.HasOne("Domain.Contact", null)
                         .WithMany("MessageList")
                         .HasForeignKey("ContactId");
-
-                    b.HasOne("Domain.User", "From")
-                        .WithMany()
-                        .HasForeignKey("FromUserName");
-
-                    b.HasOne("Domain.User", "To")
-                        .WithMany()
-                        .HasForeignKey("ToUserName");
-
-                    b.Navigation("From");
-
-                    b.Navigation("To");
                 });
 
             modelBuilder.Entity("Domain.Contact", b =>

@@ -19,18 +19,21 @@ namespace API.Controllers
         //{
         private readonly PomeloDB _context;
         private IItemService contactService;
-        private string userLogIn = "Ori";
+        private string userLogIn = "string";
         public ContactsController(PomeloDB context)
         {
             _context = context;
-            contactService = new ContactService(_context);
+            contactService = new ContactService(context);
         }
         [HttpGet]
         public async Task<ActionResult> Index()
         {
             if (_context.Contact != null)
-            {             
-                return Json(contactService.GetContacts(userLogIn));
+            {
+                //var json = Newtonsoft.Json.JsonConvert.SerializeObject(contactService.GetContacts(userLogIn));
+                //return Json(await _context.Contact.Where(item => item.UserName == userLogIn).ToListAsync());
+                List<Contact> c =await contactService.GetContacts(userLogIn);
+                return Json(c);
 
             }
             return BadRequest();
@@ -53,6 +56,7 @@ namespace API.Controllers
         [HttpGet("{id}/[action]")]
         public async Task<ActionResult> Messages(string id)
         {
+            
             return Json(contactService.GetMessages(userLogIn, id));
         }
 
@@ -70,8 +74,11 @@ namespace API.Controllers
         {
             if (ModelState.IsValid)
             {
-                contactService.AddContact(contact);
-                return  Ok();
+                _context.Contact.AddAsync(contact);
+                await _context.SaveChangesAsync();
+
+                //contactService.AddContact(contact);
+                //return  Ok();
             }
             return  BadRequest();
         }
