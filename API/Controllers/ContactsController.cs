@@ -28,7 +28,17 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult> Index()
         {
-            return  Json(contactService.GetContacts(userLogIn));
+            if (_context.Contact != null)
+            {             
+                return Json(contactService.GetContacts(userLogIn));
+
+            }
+            return BadRequest();
+
+            //                  View(await _context.Contact.ToListAsync()) :
+            //                  Problem("Entity set 'PomeloDB.Contact'  is null.");
+            //return Json(contactService.GetContacts(userLogIn));
+
         }
 
 
@@ -106,13 +116,25 @@ namespace API.Controllers
 
 
         [HttpPost("[action]/{id}/messages")]
-        public async Task<IActionResult> CreateMessage([Bind("Content , Sent")] Message message)
+        public async Task<IActionResult> CreateMessage(string id,[Bind("Type, Content , Sent, Created")] Message message)
         {
             //add from to (sent) id and login name 
             if (ModelState.IsValid)
             {
-                message.Created = DateTime.Now;
+                message.From = userLogIn;
+                message.To = id;
+                //message.Created = DateTime.Now;
+                Message m2 = new Message()
+                {
+                    Type = message.Type,
+                    Content = message.Content,
+                    Sent = !(message.Sent),
+                    Created = message.Created,
+                    From = id,
+                    To = userLogIn
+                };
                 contactService.AddMessage(message);
+                contactService.AddMessage(m2);
                 return Ok();
             }
             return BadRequest();

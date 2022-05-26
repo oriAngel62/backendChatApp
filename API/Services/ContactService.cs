@@ -21,19 +21,23 @@ namespace Services
 
         public async Task<Contact> GetContact(string userId, string id)
         {
-            return await _context.Contact.FirstOrDefaultAsync(item => (item.Id == id) && item.User.UserName == userId);
+            return await _context.Contact.FirstOrDefaultAsync(item => (item.Id == id) && item.User == userId);
         }
         public async Task<List<Contact>> GetContacts(string user)
         {
-
-            return await _context.Contact.Where(item => item.User.UserName == user).ToListAsync();
-
+            
+            //List<Contact> c= await _context.Contact.Where(item => item.User.UserName == user).ToListAsync();
+            //if (c == null)
+            //{
+            //    return null;
+            //}
+            return await _context.Contact.Where(item => item.User == user).ToListAsync();
         }
 
         public async Task<List<Message>> GetMessages(string user, string contact)
         {
 
-            return await _context.Message.Where(item => (item.From.UserName == user) && (item.To.UserName == contact)).ToListAsync();
+            return await _context.Message.Where(item => (item.From == user) && (item.To == contact)).ToListAsync();
         }
 
         public async Task<Message> GetMessage(int id)
@@ -42,10 +46,13 @@ namespace Services
             return await _context.Message.FirstOrDefaultAsync(item => item.Id == id);
         }
 
-        public async void AddContact(Contact contact)
+        public async Task AddContact(Contact contact)
         {
-            _context.Contact.Add(contact);
-            await _context.SaveChangesAsync();
+            //using (var db = new PomeloDB())
+            //{
+                _context.Contact.Add(contact);
+                await _context.SaveChangesAsync();
+            //}
             //db.Contact.Add(contact);
             //db.SaveChanges();
         }
@@ -59,13 +66,14 @@ namespace Services
         public async void DeleteContact(string userId,string contactId)
         {
             //async Contact c = GetContact(id);
-            List<Contact> x = await _context.Contact.Where(item => (item.User.UserName == userId) && (item.Id == contactId)).ToListAsync();
+            List<Contact> x = await _context.Contact.Where(item => (item.User == userId) && (item.Id == contactId)).ToListAsync();
             _context.Contact.Remove(x[0]);
             await _context.SaveChangesAsync();
         }
 
         public async void AddMessage(Message message)
         {
+
             _context.Message.Add(message);
             await _context.SaveChangesAsync();
             //db.Contact.Add(contact);

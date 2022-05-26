@@ -7,7 +7,7 @@ namespace Domain
         //user name of contact
         public string Id { get; set; }
         //user name belong to
-        public  User User { get; set; }
+        public  string? User { get; set; }
         //nickname
         public string NickName { get; set; }
         public string Server { get; set; }

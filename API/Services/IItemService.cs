@@ -9,7 +9,7 @@ namespace Services
 
         public  Task<List<Message>> GetMessages(string user, string contact);
         public  Task<Message> GetMessage(int id);
-        public void AddContact(Contact contact);
+        public Task AddContact(Contact contact);
 
         public void UpdateContact(Contact contact);
 
