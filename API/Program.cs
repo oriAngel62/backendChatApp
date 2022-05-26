@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using API.Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<PomeloDB>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("PomeloDB") ?? throw new InvalidOperationException("Connection string 'PomeloDB' not found."), MariaDbServerVersion.AutoDetect(builder.Configuration.GetConnectionString("PomeloDB"))));

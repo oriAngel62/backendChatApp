@@ -10,11 +10,7 @@ C:\Users\ori\Desktop\serveSide\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagg
 C:\Users\ori\Desktop\serveSide\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\ori\Desktop\serveSide\API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\ori\Desktop\serveSide\API\bin\Debug\net6.0\Domain.dll
-C:\Users\ori\Desktop\serveSide\API\bin\Debug\net6.0\Repository.dll
-C:\Users\ori\Desktop\serveSide\API\bin\Debug\net6.0\Services.dll
-C:\Users\ori\Desktop\serveSide\API\bin\Debug\net6.0\Services.pdb
 C:\Users\ori\Desktop\serveSide\API\bin\Debug\net6.0\Domain.pdb
-C:\Users\ori\Desktop\serveSide\API\bin\Debug\net6.0\Repository.pdb
 C:\Users\ori\Desktop\serveSide\API\obj\Debug\net6.0\API.csproj.AssemblyReference.cache
 C:\Users\ori\Desktop\serveSide\API\obj\Debug\net6.0\API.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ori\Desktop\serveSide\API\obj\Debug\net6.0\API.AssemblyInfoInputs.cache

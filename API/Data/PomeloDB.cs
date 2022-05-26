@@ -9,6 +9,10 @@ namespace API.Data
 {
     public class PomeloDB : DbContext
     {
+        public PomeloDB()
+        {
+
+        }
         public PomeloDB(DbContextOptions<PomeloDB> options)
             : base(options)
         {
@@ -16,6 +20,7 @@ namespace API.Data
 
         public DbSet<Domain.Contact>? Contact { get; set; }
         public DbSet<Domain.User>? UserDetails { get; set; }
+        public DbSet<Domain.Message>? Message { get; set; }
 
     }
 }

@@ -16,43 +16,66 @@ namespace Services
         public ContactService(PomeloDB _context1)
         {
             _context = _context1;
+
         }
 
         public async Task<Contact> GetContact(string id)
         {
-            return await _context.Contact.FirstOrDefaultAsync(item => item.UserNameNavigation.UserName == userName);
+            return await _context.Contact.FirstOrDefaultAsync(item => item.Id == id);
         }
-        public async Task<List<Contact>> GetContacts(string userName)
+        public async Task<List<Contact>> GetContacts(string user)
         {
 
-            return await _context.Contact.FirstOrDefaultAsync(item => item.UserNameNavigation.UserName == userName);
+            return await _context.Contact.Where(item => item.User.UserName == user).ToListAsync();
 
         }
 
-        //public async Task<Message> GetMessages(string contactId)
-        //{
+        public async Task<List<Message>> GetMessages(string user, string contact)
+        {
 
-        //    return await _context..Contact.Include(x => x.Id).FirstOrDefaultAsync(u => u.Id == user.Id);
-        //}
-        //public Message GetMessage(string idContact,int idMessage)
-        //{
-        //    for (int i = 0; i < d.userList[0].listContacts.Count; i++)
-        //    {
-        //        if (d.userList[0].listContacts[i].Id == idContact)
-        //        {
-        //            return d.userList[0].listContacts[i].MessageList.Where(x => x.Id == idMessage).FirstOrDefault();
-        //        }
-        //    }
-        //    return null;
-        //}
+            return await _context.Message.Where(item => (item.From.UserName == user) && (item.To.UserName == contact)).ToListAsync();
+        }
 
-        //public void AddContact(Contact contact)
-        //{
-        //    d.userList[0].listContacts.Add(contact);
-        //}
+        public async Task<Message> GetMessage(int id)
+        {
 
+            return await _context.Message.FirstOrDefaultAsync(item => item.Id == id);
+        }
 
+        public async void AddContact(Contact contact)
+        {
+            _context.Contact.Add(contact);
+            await _context.SaveChangesAsync();
+            //db.Contact.Add(contact);
+            //db.SaveChanges();
+        }
+        public async void UpdateContact(Contact contact)
+        {
+            _context.Contact.Update(contact);
+            await _context.SaveChangesAsync();
+
+        }
+
+        public async void DeleteContact(string userId,string contactId)
+        {
+            //async Contact c = GetContact(id);
+            var x = (Contact)_context.Contact.Where(item => item.User.UserName == userId && item.Id == contactId);
+            _context.Contact.Remove(x);
+            await _context.SaveChangesAsync();
+        }
     }
+    //public void DeleteContact(Contact contact)
+    //{
+    //    using (var db = new PomeloDB())
+    //    {
+    //        db.Contact.Remove(contact);
+    //        db.SaveChanges();
+    //    }
+    //}
 
-    }
+}
+
+
+
+
 

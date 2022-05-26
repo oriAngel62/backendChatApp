@@ -39,7 +39,16 @@ namespace API.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("UserName")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("userName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserName");
 
                     b.ToTable("Contact");
                 });
@@ -60,8 +69,16 @@ namespace API.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("From")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<bool>("Sent")
                         .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("To")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
@@ -71,6 +88,35 @@ namespace API.Migrations
                     b.HasIndex("ContactId");
 
                     b.ToTable("Message");
+                });
+
+            modelBuilder.Entity("Domain.User", b =>
+                {
+                    b.Property<string>("UserName")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("NickName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Server")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("UserName");
+
+                    b.ToTable("UserDetails");
+                });
+
+            modelBuilder.Entity("Domain.Contact", b =>
+                {
+                    b.HasOne("Domain.User", null)
+                        .WithMany("ContactsList")
+                        .HasForeignKey("UserName");
                 });
 
             modelBuilder.Entity("Domain.Message", b =>
@@ -83,6 +129,11 @@ namespace API.Migrations
             modelBuilder.Entity("Domain.Contact", b =>
                 {
                     b.Navigation("MessageList");
+                });
+
+            modelBuilder.Entity("Domain.User", b =>
+                {
+                    b.Navigation("ContactsList");
                 });
 #pragma warning restore 612, 618
         }

@@ -8,11 +8,11 @@
     ".NETCoreApp,Version=v6.0": {
       "MVC/1.0.0": {
         "dependencies": {
+          "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.5",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.5",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.5",
-          "Pomelo.EntityFrameworkCore.MySql": "6.0.1",
-          "Services": "1.0.0"
+          "Pomelo.EntityFrameworkCore.MySql": "6.0.1"
         },
         "runtime": {
           "MVC.dll": {}
@@ -2240,22 +2240,6 @@
         "runtime": {
           "Domain.dll": {}
         }
-      },
-      "Repository/1.0.0": {
-        "dependencies": {
-          "Domain": "1.0.0"
-        },
-        "runtime": {
-          "Repository.dll": {}
-        }
-      },
-      "Services/1.0.0": {
-        "dependencies": {
-          "Repository": "1.0.0"
-        },
-        "runtime": {
-          "Services.dll": {}
-        }
       }
     }
   },
@@ -3477,16 +3461,6 @@
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Repository/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
