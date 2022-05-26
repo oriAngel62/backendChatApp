@@ -19,9 +19,9 @@ namespace Services
 
         }
 
-        public async Task<Contact> GetContact(string id)
+        public async Task<Contact> GetContact(string userId, string id)
         {
-            return await _context.Contact.FirstOrDefaultAsync(item => item.Id == id);
+            return await _context.Contact.FirstOrDefaultAsync(item => (item.Id == id) && item.User.UserName== userId);
         }
         public async Task<List<Contact>> GetContacts(string user)
         {
@@ -63,6 +63,32 @@ namespace Services
             _context.Contact.Remove(x);
             await _context.SaveChangesAsync();
         }
+
+        public async void AddMessage(Message message)
+        {
+            _context.Message.Add(message);
+            await _context.SaveChangesAsync();
+            //db.Contact.Add(contact);
+            //db.SaveChanges();
+        }
+
+        public async void UpdateMessage(Message message)
+        {
+            //maby need to find dirst the key
+            _context.Message.Update(message);
+            await _context.SaveChangesAsync();
+            //db.Contact.Add(contact);
+            //db.SaveChanges();
+        }
+
+        public async void DeleteMessage(int idMessage)
+        {
+            //async Contact c = GetContact(id);
+            var x =(Message)_context.Message.Where(item =>  item.Id == idMessage);
+            _context.Message.Remove(x);
+            await _context.SaveChangesAsync();
+        }
+
     }
     //public void DeleteContact(Contact contact)
     //{

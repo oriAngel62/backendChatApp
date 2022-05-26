@@ -37,7 +37,7 @@ namespace API.Controllers
         [HttpGet("[action]/{id}")]
         public async Task<ActionResult> Details(string id)
         {
-            return Json(contactService.GetContact(id));
+            return Json(contactService.GetContact(userLogIn, id));
         }
 
         [HttpGet("{id}/[action]")]
@@ -55,37 +55,6 @@ namespace API.Controllers
         }
 
 
-
-
-        //// GET: Contacts1
-        //public async Task<IActionResult> Index()
-        //{
-        //    return _context.Contact != null ?
-        //                View(await _context.Contact.ToListAsync()) :
-        //                Problem("Entity set 'PomeloDB.Contact'  is null.");
-        //}
-
-        //    // GET: Contacts1/Details/5
-        //    public async Task<IActionResult> Details(string id)
-        //    {
-        //        if (id == null || _context.Contact == null)
-        //        {
-        //            return NotFound();
-        //        }
-
-        //        var contact = await _context.Contact
-        //            .FirstOrDefaultAsync(m => m.Id == id);
-        //        if (contact == null)
-        //        {
-        //            return NotFound();
-        //        }
-
-        //        return View(contact);
-        //    }
-
-
-
-
         [HttpPost]
         public async Task<IActionResult> CreateContact([Bind("Id,NickName,Server")] Contact contact)
         {
@@ -97,31 +66,80 @@ namespace API.Controllers
             return  BadRequest();
         }
 
-        //[HttpPost]
-        //[HttpPost("[action]/{id}")]
-        //public async Task<IActionResult> EditContact(string id, [Bind("NickName,Server")] Contact contact)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        contactService.UpdateContact(contact);
-        //        return Ok();
-        //    }
-        //    return BadRequest();
-        //}
+        [HttpPut("[action]/{id}")]
+        public async Task<IActionResult> EditContact(string id, [Bind("NickName,Server")] Contact contact)
+        {
+            if (ModelState.IsValid)
+            {
+                contactService.UpdateContact(contact);
+                return Ok();
+            }
+            return BadRequest();
+        }
 
-        //[HttpPost]
-        //[HttpPost("[action]/{id}")]
-        //public async Task<IActionResult> DeleteContact(string id)
-        //{
 
-        //    if (ModelState.IsValid)
-        //    {
-        //        contactService.DeleteContact(userLogIn, id);
-        //        return Ok();
-        //    }
-        //    return BadRequest();
-        //}
+        [HttpDelete("[action]/{id}")]
+        public async Task<IActionResult> DeleteContact(string id)
+        {
 
+            if (ModelState.IsValid)
+            {
+                contactService.DeleteContact(userLogIn, id);
+                return Ok();
+            }
+            return BadRequest();
+        }
+
+
+        [HttpGet("[action]/{id}/messages")]
+        public async Task<ActionResult> GetMeessages(string idContct)
+        {
+            return Json(contactService.GetMessages(userLogIn, idContct));
+        }
+
+
+        [HttpGet("[action]/{id}/messages/{id2}")]
+        public async Task<ActionResult> GetMeessage(string id,int id2)
+        {
+            return Json(contactService.GetMessage(id2));
+        }
+
+
+        [HttpPost("[action]/{id}/messages")]
+        public async Task<IActionResult> CreateMessage([Bind("Id, Type, Content , Sent")] Message message)
+        {
+            //add from to (sent) id and login name 
+            if (ModelState.IsValid)
+            {
+                contactService.AddMessage(message);
+                return Ok();
+            }
+            return BadRequest();
+        }
+
+
+        [HttpPut("[action]/{id}/messages/{id2}")]
+        public async Task<IActionResult> EditMessage(int id2,[Bind("Id, Type, Content , Sent")] Message message)
+        {
+            if (ModelState.IsValid)
+            {
+                contactService.UpdateMessage(message);
+                return Ok();
+            }
+            return BadRequest();
+        }
+
+
+        [HttpDelete("[action]/{id}/messages/{id2}")]
+        public async Task<IActionResult> DeleteMessage(int id2)
+        {
+            if (ModelState.IsValid)
+            {
+                contactService.DeleteMessage(id2);
+                return Ok();
+            }
+            return BadRequest();
+        }
 
         //// GET: Contacts1/Create
         //public IActionResult Create()

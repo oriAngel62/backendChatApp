@@ -10,7 +10,6 @@ namespace Domain
         public string NickName { get; set; }
         public string Password { get; set; }
 
-        //?
         public string Server { get; set; }
 
         public List<Contact> ContactsList { get; set; }
