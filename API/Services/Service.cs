@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Services
 {
-    public class ContactService : IItemService
+    public class Service : IService
     {
         private readonly PomeloDB _context;
 
-        public ContactService(PomeloDB _context1)
+        public Service(PomeloDB _context1)
         {
             _context = _context1;
 
@@ -21,7 +21,14 @@ namespace Services
 
         public async Task<Contact> GetContact(string userId, string id)
         {
-            return await _context.Contact.FirstOrDefaultAsync(item => (item.Id == id) && item.UserName == userId);
+            //Contact c = await _context.Contact.FirstOrDefaultAsync(item => (item.Id == id) && item.UserName == userId);
+            List<Contact> c = await _context.Contact.Where(item => (item.Id == id) && item.UserName == userId).ToListAsync();
+            if (c == null)
+            {
+                return null;
+            }
+
+            return c[0];
         }
         public async Task<List<Contact>> GetContacts(string user)
         {
@@ -31,14 +38,28 @@ namespace Services
             //{
             //    return null;
             //}
-             List < Contact > c = await _context.Contact.Where(item => item.UserName == user).ToListAsync();
+
+
+            List< Contact > c = await _context.Contact.Where(item => item.UserName == user).ToListAsync();
             return c;
+          
         }
 
         public async Task<List<Message>> GetMessages(string user, string contact)
         {
+            if(_context.Message == null)
+            {
+                return null;
+            }
 
-            return await _context.Message.Where(item => (item.From == user) && (item.To == contact)).ToListAsync();
+            List<Message> m = await _context.Message.Where(item => (item.From == user) && (item.To == contact)).ToListAsync();
+        
+            if (m == null)
+            {
+                return null;
+            }
+
+            return m;
         }
 
         public async Task<Message> GetMessage(int id)
@@ -47,12 +68,24 @@ namespace Services
             return await _context.Message.FirstOrDefaultAsync(item => item.Id == id);
         }
 
-        public async Task AddContact(Contact contact)
+        public async Task<bool?> AddContact(Contact contact)
         {
+            if (_context.Contact == null || contact == null)
+            {
+                return null;
+            }
             //using (var db = new PomeloDB())
             //{
-                _context.Contact.Add(contact);
+            _context.Contact.Add(contact);
+            try
+            {
                 await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw;
+            }
+            return true;
             //}
             //db.Contact.Add(contact);
             //db.SaveChanges();

@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Domain;
 using Services;
 using API.Data;
+using API.Migrations;
 
 
 namespace API.Controllers
@@ -18,12 +19,12 @@ namespace API.Controllers
     {
         //{
         private readonly PomeloDB _context;
-        private IItemService contactService;
+        private IService contactService;
         private string userLogIn = "string";
         public ContactsController(PomeloDB context)
         {
             _context = context;
-            contactService = new ContactService(context);
+            contactService = new Service(context);
         }
         [HttpGet]
         public async Task<ActionResult> Index()
@@ -50,14 +51,32 @@ namespace API.Controllers
         [HttpGet("[action]/{id}")]
         public async Task<ActionResult> Details(string id)
         {
-            return Json(contactService.GetContact(userLogIn, id));
+            Contact c = await _context.Contact.FirstOrDefaultAsync(item => (item.Id == id) && item.UserName == userLogIn);
+            return Json(c);
+            //return Json(contactService.GetContact(userLogIn, id));
         }
 
         [HttpGet("{id}/[action]")]
         public async Task<ActionResult> Messages(string id)
         {
-            
-            return Json(contactService.GetMessages(userLogIn, id));
+
+            //if (_context.Message == null)
+            //{
+            //    return null;
+            //}
+
+            //List<Message> m = await _context.Message.Where(item => (item.From == userLogIn) && (item.To == id)).ToListAsync();
+
+            //if (m == null)
+            //{
+            //    return null;
+            //}
+
+            List<Message> m = await _context.Message.Where(item => (item.From == userLogIn) && (item.To == id)).ToListAsync();
+
+
+            //return Json(contactService.GetMessages(userLogIn, id));
+            return Json(m);
         }
 
 
@@ -65,7 +84,9 @@ namespace API.Controllers
         [HttpGet("{id}/messages/{id2}")]
         public async Task<ActionResult> IdMessage(int id2)
         {
-            return Json(contactService.GetMessage(id2));
+            return Json(await _context.Message.FirstOrDefaultAsync(item => item.Id == id2));
+
+            //return Json(contactService.GetMessage(id2));
         }
 
 
@@ -73,13 +94,10 @@ namespace API.Controllers
         public async Task<IActionResult> CreateContact([Bind("Id,NickName,Server")] Contact contact)
         {
             if (ModelState.IsValid)
-            {
-                _context.Contact.AddAsync(contact);
-                await _context.SaveChangesAsync();
-
-                //contactService.AddContact(contact);
-                //return  Ok();
-            }
+            { 
+                contactService.AddContact(contact);
+                return Ok();
+        }
             return  BadRequest();
         }
 
