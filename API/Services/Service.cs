@@ -19,6 +19,16 @@ namespace Services
 
         }
 
+        public async Task<List<Contact>> GetContacts(string user)
+        {
+            List<Contact> c = await _context.Contact.Where(item => item.UserName == user).ToListAsync();
+            if (c == null)
+            {
+                return null;
+            }
+            return c;
+
+        }
         public async Task<Contact> GetContact(string userId, string id)
         {
             //Contact c = await _context.Contact.FirstOrDefaultAsync(item => (item.Id == id) && item.UserName == userId);
@@ -29,20 +39,6 @@ namespace Services
             }
 
             return c[0];
-        }
-        public async Task<List<Contact>> GetContacts(string user)
-        {
-
-            //List<Contact> c= await _context.Contact.Where(item => item.User.UserName == user).ToListAsync();
-            //if (c == null)
-            //{
-            //    return null;
-            //}
-
-
-            List<Contact> c = await _context.Contact.Where(item => item.UserName == user).ToListAsync();
-            return c;
-
         }
 
         public async Task<List<Message>> GetMessages(string user, string contact)

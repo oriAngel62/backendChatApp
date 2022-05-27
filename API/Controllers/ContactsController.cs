@@ -15,65 +15,81 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ContactsController : Controller
+    public class contactsController : Controller
     {
         //{
         private readonly PomeloDB _context;
         private Service contactService;
         private string userLogIn = "string";
-        public ContactsController(PomeloDB context)
+        public contactsController(PomeloDB context)
         {
             _context = context;
             contactService = new Service(context);
         }
+        //get contacts
         [HttpGet]
         public async Task<ActionResult> Index()
         {
             if (_context.Contact != null)
             {
-                //var json = Newtonsoft.Json.JsonConvert.SerializeObject(contactService.GetContacts(userLogIn));
-                //return Json(await _context.Contact.Where(item => item.UserName == userLogIn).ToListAsync());
                 List<Contact> c = await contactService.GetContacts(userLogIn);
+                if(c == null)
+                {
+                    return NotFound();
+                }
                 return Json(c);
 
             }
             return BadRequest();
 
-            //                  View(await _context.Contact.ToListAsync()) :
-            //                  Problem("Entity set 'PomeloDB.Contact'  is null.");
-            //return Json(contactService.GetContacts(userLogIn));
-
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> CreateContact([Bind("Id,NickName,Server")] Contact contact)
+        {
+            if (ModelState.IsValid)
+            {
+                if(_context.Contact == null || contact == null)
+                { 
+                    return null;
+                }
+                //using (var db = new PomeloDB())
+                //{
+                _context.Contact.Add(contact);
+                try
+                {
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    throw;
+                }
+                return Ok();
+            }
+            return BadRequest();
+        }
+
 
 
         // GET: ContactsController/Details/5
 
-        [HttpGet("[action]/{id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult> Details(string id)
         {
             Contact c = await _context.Contact.FirstOrDefaultAsync(item => (item.ContactName == id) && item.UserName == userLogIn);
             return Json(c);
-            //return Json(contactService.GetContact(userLogIn, id));
         }
 
         [HttpGet("{id}/[action]")]
         public async Task<ActionResult> Messages(string id)
         {
-
-            //if (_context.Message == null)
-            //{
-            //    return null;
-            //}
-
-            //List<Message> m = await _context.Message.Where(item => (item.From == userLogIn) && (item.To == id)).ToListAsync();
-
-            //if (m == null)
-            //{
-            //    return null;
-            //}
-
             List<Message> m = await _context.Message.Where(item => (item.From == userLogIn) && (item.To == id)).ToListAsync();
 
+            if (m == null)
+            {
+                return null;
+            }
 
             //return Json(contactService.GetMessages(userLogIn, id));
             return Json(m);
@@ -90,16 +106,6 @@ namespace API.Controllers
         }
 
 
-        [HttpPost]
-        public async Task<IActionResult> CreateContact([Bind("Id,NickName,Server")] Contact contact)
-        {
-            if (ModelState.IsValid)
-            {
-                contactService.AddContact(contact);
-                return Ok();
-            }
-            return BadRequest();
-        }
 
         [HttpPut("[action]/{id}")]
         public async Task<IActionResult> EditContact(string id, [Bind("NickName,Server")] Contact contact)
