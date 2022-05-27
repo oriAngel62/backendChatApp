@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain
 {
@@ -11,6 +12,7 @@ namespace Domain
     //}
     public class Message
     {
+        [Key]
         public int Id { get; set; }
         //from to ?
 

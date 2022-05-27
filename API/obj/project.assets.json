@@ -9693,11 +9693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ori\\Desktop\\serveSide\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\ori\\Desktop\\serveSide\\API\\API.csproj",
+      "projectPath": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\API\\API.csproj",
       "packagesPath": "C:\\Users\\ori\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ori\\Desktop\\serveSide\\API\\obj\\",
+      "outputPath": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -9717,8 +9717,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ori\\Desktop\\serveSide\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\ori\\Desktop\\serveSide\\Domain\\Domain.csproj"
+            "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\Domain\\Domain.csproj"
             }
           }
         }

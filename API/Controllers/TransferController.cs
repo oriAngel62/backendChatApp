@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using API.Data;
+//using API.Data;
 using Domain;
 
 namespace API.Controllers
@@ -14,23 +14,23 @@ namespace API.Controllers
     [Route("api/transfer")]
     public class TransferController : Controller
     {
-        private readonly PomeloDB _context;
+        //private readonly PomeloDB _context;
 
-        public TransferController(PomeloDB context)
-        {
-            _context = context;
-        }
+        //public TransferController(PomeloDB context)
+        //{
+        //    _context = context;
+        //}
 
-        [HttpPost]
-        public async Task<IActionResult> Transfer([Bind("From,To,Content")] Message message)
-        {
-            //if (ModelState.IsValid)
-            //{
-            //    _context..AddContact(contact);
-            //    return Ok();
-            //}
-            return BadRequest();
-        }
+        //[HttpPost]
+        //public async Task<IActionResult> Transfer([Bind("From,To,Content")] Message message)
+        //{
+        //    //if (ModelState.IsValid)
+        //    //{
+        //    //    _context..AddContact(contact);
+        //    //    return Ok();
+        //    //}
+        //    return BadRequest();
+        //}
 
         //// GET: Transfer
         //public async Task<IActionResult> Index()

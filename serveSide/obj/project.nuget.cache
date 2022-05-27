@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S1JV0ba5Syz6xvjpOBEdEJIX2C+pOyPTFPBlwkWoX9701U+yXubpvY7zTxg2PzKoTSuWdpHIA+HlnKotYrVCCg==",
+  "dgSpecHash": "uxlF6D6EwtNm4BDyTYkDpKX5PxKeCh+Y0vwAiWWsO1l/RMnqNgECDVRlw6F1l23tpVote6OQ0A960bBr3rgtNQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ori\\Desktop\\serveSide\\serveSide\\MVC.csproj",
+  "projectFilePath": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\serveSide\\MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ori\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ori\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

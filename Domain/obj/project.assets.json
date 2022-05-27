@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ori\\Desktop\\serveSide\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\ori\\Desktop\\serveSide\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\ori\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ori\\Desktop\\serveSide\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

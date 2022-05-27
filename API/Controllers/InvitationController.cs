@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using API.Data;
+//using API.Data;
 using Domain;
 
 namespace API.Controllers
@@ -14,22 +14,22 @@ namespace API.Controllers
     [Route("api/invitations")]
     public class InvitationController : Controller
     {
-        private readonly PomeloDB _context;
+        //private readonly PomeloDB _context;
 
-        public InvitationController(PomeloDB context)
-        {
-            _context = context;
-        }
-        [HttpPost]
-        public async Task<IActionResult> SendInvitation([Bind("From,To,Server")] Contact contact)
-        {
-            //if (ModelState.IsValid)
-            //{
-            //    _context..AddContact(contact);
-            //    return Ok();
-            //}
-            return BadRequest();
-        }
+        //public InvitationController(PomeloDB context)
+        //{
+        //    _context = context;
+        //}
+        //[HttpPost]
+        //public async Task<IActionResult> SendInvitation([Bind("From,To,Server")] Contact contact)
+        //{
+        //    //if (ModelState.IsValid)
+        //    //{
+        //    //    _context..AddContact(contact);
+        //    //    return Ok();
+        //    //}
+        //    return BadRequest();
+        //}
 
         // GET: Invitation
         //public async Task<IActionResult> Index()

@@ -9496,11 +9496,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ori\\Desktop\\serveSide\\serveSide\\MVC.csproj",
+      "projectUniqueName": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\serveSide\\MVC.csproj",
       "projectName": "MVC",
-      "projectPath": "C:\\Users\\ori\\Desktop\\serveSide\\serveSide\\MVC.csproj",
+      "projectPath": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\serveSide\\MVC.csproj",
       "packagesPath": "C:\\Users\\ori\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ori\\Desktop\\serveSide\\serveSide\\obj\\",
+      "outputPath": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\serveSide\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -9520,8 +9520,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ori\\Desktop\\serveSide\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\ori\\Desktop\\serveSide\\Domain\\Domain.csproj"
+            "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\Domain\\Domain.csproj"
             }
           }
         }

@@ -5,22 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Domain;
 
-namespace API.Data
-{
     public class PomeloDB : DbContext
     {
-        public PomeloDB()
-        {
-
-        }
-        public PomeloDB(DbContextOptions<PomeloDB> options)
+        public PomeloDB (DbContextOptions<PomeloDB> options)
             : base(options)
         {
         }
 
         public DbSet<Domain.Contact>? Contact { get; set; }
-        public DbSet<Domain.User>? User { get; set; }
-        public DbSet<Domain.Message>? Message { get; set; }
 
+        public DbSet<Domain.User>? User { get; set; }
+
+        public DbSet<Domain.Message>? Message { get; set; }
     }
-}
