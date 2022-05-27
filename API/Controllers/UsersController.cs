@@ -7,6 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 //using API.Data;
 using Domain;
+using API.Data;
+using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace API.Controllers
 {
@@ -15,10 +20,11 @@ namespace API.Controllers
     public class usersController : Controller
     {
         private readonly PomeloDB _context;
-
-        public usersController(PomeloDB context)
+        private readonly IConfiguration conf;
+        public usersController(PomeloDB context, IConfiguration conf)
         {
             _context = context;
+            this.conf = conf;
         }
 
         [HttpGet]
@@ -28,6 +34,29 @@ namespace API.Controllers
             return Json(_context.User);
         }
 
+        [HttpPost]
+        [Route("/api/users/signin")]
+        public async Task<ActionResult> SignIn([FromBody] SignInRequest request)
+        {
+            var claims = new[]
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, conf["JWT:Subject"]),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
+                new Claim("UserId", request.UserId),
+            };
+            var symKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(conf["JWT:Key"]));
+            var signInCreds = new SigningCredentials(symKey, SecurityAlgorithms.HmacSha256);
+            var jwtSecurityToken = new JwtSecurityToken(
+                conf["JWT:Issuer"],
+                conf["JWT:Audience"],
+                claims,
+                expires: DateTime.UtcNow.AddDays(2),
+                signingCredentials: signInCreds);
+            var jwtToken = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
+            return Ok(jwtToken);
+
+        }
 
         [HttpPost]
         public async Task<ActionResult> AddNewUser([Bind("UserName, NickName, Password, Server")] User user)

@@ -9,10 +9,10 @@ using Domain;
 using Services;
 //using API.Data;
 using API.Migrations;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
-{
+{   [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class contactsController : Controller
@@ -48,6 +48,8 @@ namespace API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateContact([Bind("Id,NickName,Server")] Contact contact)
         {
+            // JWT DO THIS IN EVERY START OF FUNCTION
+            userLogIn = User.Claims.FirstOrDefault(claim => claim.Type == "UserId").Value;
             if (ModelState.IsValid)
             {
                 if(_context.Contact == null || contact == null)
