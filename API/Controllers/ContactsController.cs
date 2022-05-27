@@ -81,7 +81,7 @@ namespace API.Controllers
             return Json(c);
         }
 
-        [HttpGet("{id}/[action]")]
+        [HttpGet("{id}/messages")]
         public async Task<ActionResult> Messages(string id)
         {
             List<Message> m = await _context.Message.Where(item => (item.From == userLogIn) && (item.To == id)).ToListAsync();
@@ -107,25 +107,28 @@ namespace API.Controllers
 
 
 
-        [HttpPut("[action]/{id}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> EditContact(string id, [Bind("NickName,Server")] Contact contact)
         {
             if (ModelState.IsValid)
             {
-                contactService.UpdateContact(contact);
+                _context.Contact.Update(contact);
+                await _context.SaveChangesAsync();
                 return Ok();
             }
             return BadRequest();
         }
 
 
-        [HttpDelete("[action]/{id}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteContact(string id)
         {
 
             if (ModelState.IsValid)
             {
-                contactService.DeleteContact(userLogIn, id);
+                List<Contact> x = await _context.Contact.Where(item => (item.UserName == userLogIn) && (item.ContactName == id)).ToListAsync();
+                _context.Contact.Remove(x[0]);
+                await _context.SaveChangesAsync();
                 return Ok();
             }
             return BadRequest();
@@ -133,9 +136,19 @@ namespace API.Controllers
 
 
         [HttpGet("[action]/{id}/messages")]
-        public async Task<ActionResult> GetMeessages(string idContct)
+        public async Task<ActionResult> GetMeessages(string idContact)
         {
-            return Json(contactService.GetMessages(userLogIn, idContct));
+            if (_context.Message == null)
+            {
+                return null;
+            }
+            List<Message> m = await _context.Message.Where(item => (item.From == userLogIn) && (item.To == idContact)).ToListAsync();
+
+            if (m == null)
+            {
+                return null;
+            }
+            return Json(m);
         }
 
 
@@ -146,12 +159,15 @@ namespace API.Controllers
         }
 
 
-        [HttpPost("[action]/{id}/messages")]
+        [HttpPost("{id}/messages")]
         public async Task<IActionResult> CreateMessage(string id, [Bind("Type, Content , Sent, Created")] Message message)
         {
             //add from to (sent) id and login name 
             if (ModelState.IsValid)
             {
+
+
+
                 message.From = userLogIn;
                 message.To = id;
                 //message.Created = DateTime.Now;
@@ -164,8 +180,12 @@ namespace API.Controllers
                     From = id,
                     To = userLogIn
                 };
-                contactService.AddMessage(message);
-                contactService.AddMessage(m2);
+                _context.Message.Add(message);
+                _context.Message.Add(m2);
+                //contactService.AddMessage(message);
+                //contactService.AddMessage(m2);
+                await _context.SaveChangesAsync();
+
                 return Ok();
             }
             return BadRequest();

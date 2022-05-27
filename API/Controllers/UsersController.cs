@@ -14,29 +14,29 @@ namespace API.Controllers
     [Route("[controller]")]
     public class UsersController : Controller
     {
-        //private readonly PomeloDB _context;
+        private readonly PomeloDB _context;
 
-        //public UsersController(PomeloDB context)
-        //{
-        //    _context = context;
-        //}
+        public UsersController(PomeloDB context)
+        {
+            _context = context;
+        }
 
-        //[HttpGet]
-        //public async Task<ActionResult> Index()
-        //{
-        //    //return just the name without other field
-        //    return Json(_context.User);
-        //}
+        [HttpGet]
+        public async Task<ActionResult> Index()
+        {
+            //return just the name without other field
+            return Json(_context.User);
+        }
 
 
-        //[HttpPost]
-        //public async Task<ActionResult> AddNewUser([Bind("UserName, NickName, Password, Server")] User user)
-        //{
-        //    _context.User.Add(user);
-        //    await _context.SaveChangesAsync();
-        //    //return just the name without other field
-        //    return Json(_context.User);
-        //}
+        [HttpPost]
+        public async Task<ActionResult> AddNewUser([Bind("UserName, NickName, Password, Server")] User user)
+        {
+            _context.User.Add(user);
+            await _context.SaveChangesAsync();
+            //return just the name without other field
+            return Json(_context.User);
+        }
 
 
         //// GET: Users
