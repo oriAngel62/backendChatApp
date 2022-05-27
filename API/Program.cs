@@ -5,7 +5,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<PomeloDB>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("PomeloDB") ?? throw new InvalidOperationException("Connection string 'PomeloDB' not found."), MariaDbServerVersion.AutoDetect(builder.Configuration.GetConnectionString("PomeloDB"))));
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Allow All",
+        builder =>
+        {
+            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        });
+}
+);
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -22,6 +30,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors("Allow All");
 
 app.UseHttpsRedirection();
 

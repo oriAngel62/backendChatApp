@@ -97,16 +97,6 @@ namespace API.Controllers
 
 
 
-        [HttpGet("{id}/messages/{id2}")]
-        public async Task<ActionResult> IdMessage(int id2)
-        {
-            return Json(await _context.Message.FirstOrDefaultAsync(item => item.Id == id2));
-
-            //return Json(contactService.GetMessage(id2));
-        }
-
-
-
         [HttpPut("{id}")]
         public async Task<IActionResult> EditContact(string id, [Bind("NickName,Server")] Contact contact)
         {
@@ -135,27 +125,10 @@ namespace API.Controllers
         }
 
 
-        [HttpGet("[action]/{id}/messages")]
-        public async Task<ActionResult> GetMeessages(string idContact)
-        {
-            if (_context.Message == null)
-            {
-                return null;
-            }
-            List<Message> m = await _context.Message.Where(item => (item.From == userLogIn) && (item.To == idContact)).ToListAsync();
-
-            if (m == null)
-            {
-                return null;
-            }
-            return Json(m);
-        }
-
-
-        [HttpGet("[action]/{id}/messages/{id2}")]
+        [HttpGet("{id}/messages/{id2}")]
         public async Task<ActionResult> GetMeessage(string id, int id2)
         {
-            return Json(contactService.GetMessage(id2));
+            return Json(await _context.Message.FirstOrDefaultAsync(item => item.Id == id2));
         }
 
 
@@ -165,9 +138,6 @@ namespace API.Controllers
             //add from to (sent) id and login name 
             if (ModelState.IsValid)
             {
-
-
-
                 message.From = userLogIn;
                 message.To = id;
                 //message.Created = DateTime.Now;
@@ -192,158 +162,163 @@ namespace API.Controllers
         }
 
 
-        [HttpPut("[action]/{id}/messages/{id2}")]
+        [HttpPut("{id}/messages/{id2}")]
         public async Task<IActionResult> EditMessage(int id2, [Bind("Id, Type, Content , Sent")] Message message)
         {
             if (ModelState.IsValid)
             {
-                contactService.UpdateMessage(message);
+                message.Id = id2;
+                _context.Message.Update(message);
+                await _context.SaveChangesAsync();
+                //contactService.UpdateMessage(message);
                 return Ok();
             }
             return BadRequest();
         }
 
 
-        [HttpDelete("[action]/{id}/messages/{id2}")]
+        [HttpDelete("{id}/messages/{id2}")]
         public async Task<IActionResult> DeleteMessage(int id2)
         {
             if (ModelState.IsValid)
             {
-                contactService.DeleteMessage(id2);
+                Message x = await _context.Message.FindAsync(id2);
+                if (x != null)
+                {
+                    _context.Message.Remove(x);
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    return NotFound();
+                }
+                //contactService.DeleteMessage(id2);
                 return Ok();
             }
             return BadRequest();
         }
-
 
         [HttpGet("[action]/time")]
         public async Task<ActionResult> GetTime()
         {
             return Json(DateTime.Now);
         }
-
-
-
-
-        //// GET: Contacts1/Create
-        //public IActionResult Create()
-        //{
-        //    return View();
-        //}
-
-        //// POST: Contacts1/Create
-        //// To protect from overposting attacks, enable the specific properties you want to bind to.
-        //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create([Bind("Id,NickName,Server,Last,LastDate")] Contact contact)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        contactService.AddContact(contact);
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return await Json(contact);
-        //}
-
-        //// GET: Contacts1/Edit/5
-        //public async Task<IActionResult> Edit(string id)
-        //{
-        //    if (id == null || _context.Contact == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var contact = await _context.Contact.FindAsync(id);
-        //    if (contact == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(contact);
-        //}
-
-        //// POST: Contacts1/Edit/5
-        //// To protect from overposting attacks, enable the specific properties you want to bind to.
-        //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(string id, [Bind("Id,NickName,Server,Last,LastDate")] Contact contact)
-        //{
-        //    if (id != contact.Id)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            _context.Update(contact);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!ContactExists(contact.Id))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(contact);
-        //}
-
-        //// GET: Contacts1/Delete/5
-        //public async Task<IActionResult> Delete(string id)
-        //{
-        //    if (id == null || _context.Contact == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var contact = await _context.Contact
-        //        .FirstOrDefaultAsync(m => m.Id == id);
-        //    if (contact == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(contact);
-        //}
-
-        //// POST: Contacts1/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteConfirmed(string id)
-        //{
-        //    if (_context.Contact == null)
-        //    {
-        //        return Problem("Entity set 'PomeloDB.Contact'  is null.");
-        //    }
-        //    var contact = await _context.Contact.FindAsync(id);
-        //    if (contact != null)
-        //    {
-        //        _context.Contact.Remove(contact);
-        //    }
-
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
-        //}
-
-        //private bool ContactExists(string id)
-        //{
-        //    return (_context.Contact?.Any(e => e.Id == id)).GetValueOrDefault();
-        //}
     }
-
-
-
-
-
-
 }
+
+
+
+//// GET: Contacts1/Create
+//public IActionResult Create()
+//{
+//    return View();
+//}
+
+//// POST: Contacts1/Create
+//// To protect from overposting attacks, enable the specific properties you want to bind to.
+//// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+//[HttpPost]
+//[ValidateAntiForgeryToken]
+//public async Task<IActionResult> Create([Bind("Id,NickName,Server,Last,LastDate")] Contact contact)
+//{
+//    if (ModelState.IsValid)
+//    {
+//        contactService.AddContact(contact);
+//        return RedirectToAction(nameof(Index));
+//    }
+//    return await Json(contact);
+//}
+
+//// GET: Contacts1/Edit/5
+//public async Task<IActionResult> Edit(string id)
+//{
+//    if (id == null || _context.Contact == null)
+//    {
+//        return NotFound();
+//    }
+
+//    var contact = await _context.Contact.FindAsync(id);
+//    if (contact == null)
+//    {
+//        return NotFound();
+//    }
+//    return View(contact);
+//}
+
+//// POST: Contacts1/Edit/5
+//// To protect from overposting attacks, enable the specific properties you want to bind to.
+//// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+//[HttpPost]
+//[ValidateAntiForgeryToken]
+//public async Task<IActionResult> Edit(string id, [Bind("Id,NickName,Server,Last,LastDate")] Contact contact)
+//{
+//    if (id != contact.Id)
+//    {
+//        return NotFound();
+//    }
+
+//    if (ModelState.IsValid)
+//    {
+//        try
+//        {
+//            _context.Update(contact);
+//            await _context.SaveChangesAsync();
+//        }
+//        catch (DbUpdateConcurrencyException)
+//        {
+//            if (!ContactExists(contact.Id))
+//            {
+//                return NotFound();
+//            }
+//            else
+//            {
+//                throw;
+//            }
+//        }
+//        return RedirectToAction(nameof(Index));
+//    }
+//    return View(contact);
+//}
+
+//// GET: Contacts1/Delete/5
+//public async Task<IActionResult> Delete(string id)
+//{
+//    if (id == null || _context.Contact == null)
+//    {
+//        return NotFound();
+//    }
+
+//    var contact = await _context.Contact
+//        .FirstOrDefaultAsync(m => m.Id == id);
+//    if (contact == null)
+//    {
+//        return NotFound();
+//    }
+
+//    return View(contact);
+//}
+
+//// POST: Contacts1/Delete/5
+//[HttpPost, ActionName("Delete")]
+//[ValidateAntiForgeryToken]
+//public async Task<IActionResult> DeleteConfirmed(string id)
+//{
+//    if (_context.Contact == null)
+//    {
+//        return Problem("Entity set 'PomeloDB.Contact'  is null.");
+//    }
+//    var contact = await _context.Contact.FindAsync(id);
+//    if (contact != null)
+//    {
+//        _context.Contact.Remove(contact);
+//    }
+
+//    await _context.SaveChangesAsync();
+//    return RedirectToAction(nameof(Index));
+//}
+
+//private bool ContactExists(string id)
+//{
+//    return (_context.Contact?.Any(e => e.Id == id)).GetValueOrDefault();
+//}
 

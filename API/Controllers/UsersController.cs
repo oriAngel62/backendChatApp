@@ -12,11 +12,11 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UsersController : Controller
+    public class usersController : Controller
     {
         private readonly PomeloDB _context;
 
-        public UsersController(PomeloDB context)
+        public usersController(PomeloDB context)
         {
             _context = context;
         }
