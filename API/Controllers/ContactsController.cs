@@ -38,7 +38,7 @@ namespace API.Controllers
                 {
                     return NotFound();
                 }
-                return Json(c);
+                return Ok(c);
 
             }
             return BadRequest();
