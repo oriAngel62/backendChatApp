@@ -47,7 +47,8 @@ namespace API.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> CreateContact([Bind("Id,NickName,Server")] Contact contact)
+        [Route("/api/contacts")]
+        public async Task<IActionResult> CreateContact([FromBody] Contact contact)
         {
             // JWT DO THIS IN EVERY START OF FUNCTION
             userLogIn = User.Claims.FirstOrDefault(claim => claim.Type == "UserId").Value;

@@ -49,7 +49,7 @@ namespace API.Controllers
                 new Claim(JwtRegisteredClaimNames.Sub, conf["JWT:Subject"]),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
-                new Claim("UserId", request.UserId),
+                new Claim("UserId", request.UserId.ToString()),
             };
             var symKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(conf["JWT:Key"]));
             var signInCreds = new SigningCredentials(symKey, SecurityAlgorithms.HmacSha256);
@@ -61,7 +61,7 @@ namespace API.Controllers
                 signingCredentials: signInCreds);
             var jwtToken = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
  
-            return Ok(jwtToken.Replace("\"", ""));
+            return Ok(new ResponseLogin() { Token = jwtToken });
 
         }
 
