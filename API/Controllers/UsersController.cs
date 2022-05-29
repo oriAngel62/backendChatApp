@@ -28,6 +28,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
+        [Route("/api/users")]
         public async Task<ActionResult> Index()
         {
             //return just the name without other field
@@ -59,7 +60,8 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddNewUser([Bind("UserName, NickName, Password, Server")] User user)
+        [Route("/api/users")]
+        public async Task<ActionResult> AddNewUser([Bind("Id, NickName, Password, Server")] User user)
         {
             _context.User.Add(user);
             await _context.SaveChangesAsync();

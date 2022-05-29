@@ -8,93 +8,93 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MVC
 build_property.RootNamespace = MVC
-build_property.ProjectDir = C:\Users\aviya\Source\Repos\backendChatApp\serveSide\
+build_property.ProjectDir = C:\Users\aviya\source\repos\backendChatApp\serveSide\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\aviya\Source\Repos\backendChatApp\serveSide
+build_property.MSBuildProjectDirectory = C:\Users\aviya\source\repos\backendChatApp\serveSide
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Home/Index.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Home/Privacy.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Ranks1/Create.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Ranks1/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3MxXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Ranks1/Delete.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Ranks1/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3MxXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Ranks1/Details.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Ranks1/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3MxXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Ranks1/Edit.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Ranks1/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3MxXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Ranks1/Index.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Ranks1/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3MxXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Ranks/Create.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Ranks/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Ranks/Delete.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Ranks/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Ranks/Details.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Ranks/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Ranks/Edit.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Ranks/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Ranks/Index.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Ranks/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Ranks/Search.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Ranks/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3NcU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Ranks/Search2.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Ranks/Search2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3NcU2VhcmNoMi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Shared/Error.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Shared/Index.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Shared/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Try/Index.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Try/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJ5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/_ViewImports.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/_ViewStart.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/Source/Repos/backendChatApp/serveSide/Views/Shared/_Layout.cshtml]
+[C:/Users/aviya/source/repos/backendChatApp/serveSide/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-q0a04yuu0e

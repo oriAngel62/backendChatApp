@@ -816,3 +816,4 @@ C:\Users\aviya\Source\Repos\backendChatApp\API\obj\Debug\net6.0\refint\API.dll
 C:\Users\aviya\Source\Repos\backendChatApp\API\obj\Debug\net6.0\API.pdb
 C:\Users\aviya\Source\Repos\backendChatApp\API\obj\Debug\net6.0\API.genruntimeconfig.cache
 C:\Users\aviya\Source\Repos\backendChatApp\API\obj\Debug\net6.0\ref\API.dll
+C:\Users\aviya\Source\Repos\backendChatApp\API\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll
