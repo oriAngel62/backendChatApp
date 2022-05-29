@@ -141,7 +141,7 @@ namespace API.Controllers
 
 
         [HttpPost("{id}/messages")]
-        public async Task<IActionResult> CreateMessage(string id, [Bind("Type, Content , Sent, Created")] Message message)
+        public async Task<IActionResult> CreateMessage(string id, [FromBody] Message message)
         {
             userLogIn = User.Claims.FirstOrDefault(claim => claim.Type == "UserId").Value;
             //add from to (sent) id and login name 
