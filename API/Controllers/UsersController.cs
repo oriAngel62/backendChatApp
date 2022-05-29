@@ -39,6 +39,11 @@ namespace API.Controllers
         [Route("/api/users/signin")]
         public async Task<ActionResult> SignIn([FromBody] SignInRequest request)
         {
+            var usersList = await _context.User.Where(user => user.UserName == request.UserId).ToListAsync();
+            var user = usersList.FirstOrDefault();
+            if (user == null) return NotFound();
+            if (request.Password != user.Password) return NotFound();
+
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, conf["JWT:Subject"]),
@@ -55,7 +60,8 @@ namespace API.Controllers
                 expires: DateTime.UtcNow.AddDays(2),
                 signingCredentials: signInCreds);
             var jwtToken = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
-            return Ok(jwtToken);
+ 
+            return Ok(jwtToken.Replace("\"", ""));
 
         }
 
