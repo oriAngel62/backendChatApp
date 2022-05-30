@@ -91,14 +91,13 @@ namespace API.Controllers
         {
             userLogIn = User.Claims.FirstOrDefault(claim => claim.Type == "UserId").Value;
             List<Message> m = await _context.Message.Where(item => (item.From == userLogIn) && (item.To == id)).ToListAsync();
-
             if (m == null)
             {
                 return null;
             }
 
             //return Json(contactService.GetMessages(userLogIn, id));
-            return Json(m);
+            return Ok(m);
         }
 
 

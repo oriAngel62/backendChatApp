@@ -8,133 +8,133 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = API
 build_property.RootNamespace = API
-build_property.ProjectDir = C:\Users\aviya\source\repos\backendChatApp\API\
+build_property.ProjectDir = C:\Users\ori\Desktop\backendChatApp\API\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\aviya\source\repos\backendChatApp\API
+build_property.MSBuildProjectDirectory = C:\Users\ori\Desktop\backendChatApp\API
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Contacts1/Create.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Contacts1/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHMxXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Contacts1/Delete.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Contacts1/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHMxXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Contacts1/Details.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Contacts1/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHMxXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Contacts1/Edit.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Contacts1/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHMxXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Contacts1/Index.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Contacts1/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHMxXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Invitation/Create.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Invitation/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52aXRhdGlvblxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Invitation/Delete.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Invitation/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52aXRhdGlvblxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Invitation/Details.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Invitation/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52aXRhdGlvblxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Invitation/Edit.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Invitation/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52aXRhdGlvblxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Invitation/Index.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Invitation/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52aXRhdGlvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Messages/Create.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Messages/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Messages/Delete.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Messages/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Messages/Details.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Messages/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Messages/Edit.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Messages/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Messages/Index.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Messages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Transfer/Create.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Transfer/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNmZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Transfer/Delete.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Transfer/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNmZXJcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Transfer/Details.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Transfer/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNmZXJcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Transfer/Edit.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Transfer/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNmZXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Transfer/Index.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Transfer/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNmZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Users1/Create.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Users1/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnMxXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Users1/Delete.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Users1/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnMxXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Users1/Details.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Users1/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnMxXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Users1/Edit.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Users1/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnMxXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Users1/Index.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Users1/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnMxXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Users/Create.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Users/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Users/Delete.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Users/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Users/Details.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Users/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Users/Edit.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aviya/source/repos/backendChatApp/API/Views/Users/Index.cshtml]
+[C:/Users/ori/Desktop/backendChatApp/API/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

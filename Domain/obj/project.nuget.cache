@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0mVNEV3qfjFrjyrTZ6YtfxYIQ4iSctdqXtluUgRo95bnIUmyvy6cd2kQSd1vWGY/5UVZOAib9qBfV/9+uz9SjQ==",
+  "dgSpecHash": "UK5Lid9iS44ZVF7uAYxLOd5HXLqftq9XnNtSZqF4gB7CbTl8l6B+9sUV4fytchCYFg4IV73CNvNGesHCY1mhpA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aviya\\source\\repos\\backendChatApp\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\ori\\Desktop\\backendChatApp\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
