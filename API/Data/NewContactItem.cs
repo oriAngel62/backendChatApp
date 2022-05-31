@@ -9,7 +9,7 @@
         public NewContactItem(string id, string server)
         {
             Id = id;
-            Nickname = nickname;
+            Server = server;
         }
     }
 }

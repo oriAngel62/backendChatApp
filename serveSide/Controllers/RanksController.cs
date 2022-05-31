@@ -19,6 +19,11 @@ namespace MVC.Controllers
             _context = context;
         }
 
+        public async Task<IActionResult> Back()
+        {
+            return Redirect("http://localhost:3000/Login");
+        }
+
         // GET: Ranks
         public async Task<IActionResult> Index()
         {
