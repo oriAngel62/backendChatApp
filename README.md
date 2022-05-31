@@ -24,7 +24,7 @@ Steps to run the project:
 Install-Package Pomelo.EntityFrameworkCore.MySQL -Version 6.0.1
 Install-Package Microsoft.EntityFrameworkcore.Tools -version 6.0.1
 
-Add-Migration to API and MVC projects:
+Add-Migration to API: 
 VisualStudio -> search -> package maneger -> ( a console window open) -> write: Add-Migration "nameOfYpurChoise"  ->
 -> write: Update-DataBase   -----  we got DB.
 
@@ -32,6 +32,8 @@ how to play with it:
 open prompt - search in windown : "MySQL Client (MariaDB ... )" -> then password
 use PomeloDB (name of the db);   - to open DB
 (open the table "user") SELECT * FROM user;
+
+if you already have db that not update write "drop databse PomeloDB;" in the prompt , delete all migration files and Add-Migration again. 
 
 *Run the server (set as start up project) API project (swagger should open).
 Our working url server is hard coded in program.cs file, so in every fetch method we include this url http://localhost:5285.
