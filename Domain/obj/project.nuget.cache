@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cwxMUlUleSWozqH6R0DeVnIhV03DKCtK0VQN30qp2VV+n6x2SvrDMVg911xKtFT3EU6iXkNk2ObPHzRNuHRfvA==",
+  "dgSpecHash": "ebL8zNBSetBi9IW/zNUEvtfimD5v2CLj2/07+7++1iYIQKOIGLgDyqwPaTalPFnQW4MBzqkQaJVfwN+TXs4XnQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\David\\Desktop\\backmain\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

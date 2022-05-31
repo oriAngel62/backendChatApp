@@ -14,6 +14,17 @@
 
 <h1>Ranking History</h1>
 
+
+<h5>     <a asp-action="Back">Back to login chat app</a>
+</h5>
+@if (TempData["AlreadyRank"] != null)
+ {
+    <div class="alert alert-success alert-dismissable">
+         <strong>@TempData["AlreadyRank"]</strong>
+    </div>
+ }
+
+
 <table class="table">
     <thead>
         <tr>
@@ -67,6 +78,8 @@
         <p>
     <a asp-action="Create">Create New Rank!</a>
 </p>
+     
+
 <form asp-action="Search"> <input name="query" />
     <input type="submit" value="Search" />
     </form>

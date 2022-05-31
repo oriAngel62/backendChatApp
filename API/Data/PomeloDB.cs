@@ -17,4 +17,7 @@ using Domain;
         public DbSet<Domain.User>? User { get; set; }
 
         public DbSet<Domain.Message>? Message { get; set; }
-    }
+
+    public DbSet<Domain.Rank>? Rank { get; set; }
+
+}

@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using MVC.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<PomeloDB>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("PomeloDB") ?? throw new InvalidOperationException("Connection string 'PomeloDB' not found."), MariaDbServerVersion.AutoDetect(builder.Configuration.GetConnectionString("PomeloDB"))));
 
-builder.Services.AddDbContext<MVCContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MVCContext") ?? throw new InvalidOperationException("Connection string 'MVCContext' not found.")));
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

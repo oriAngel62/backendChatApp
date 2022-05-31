@@ -6,18 +6,22 @@ using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MVC.Data;
 
 namespace MVC.Controllers
 {
     public class RanksController : Controller
     {
-        private readonly MVCContext _context;
+        private readonly PomeloDB _context;
 
-        public RanksController(MVCContext context)
+        public RanksController(PomeloDB context)
         {
        
             _context = context;
+        }
+
+        public async Task<IActionResult> Back()
+        {
+            return Redirect("http://localhost:3000/Login");
         }
 
         // GET: Ranks
@@ -85,15 +89,26 @@ namespace MVC.Controllers
             {
                 var user = _context.Rank.Where(x => x.UserName == rank.UserName).FirstOrDefault();
                     rank.Created = DateTime.Now;
+                var exist = _context.User.Where(x => x.UserName == rank.UserName).FirstOrDefault();
+
                 if (user != null)
                 {
+                    TempData["AlreadyRank"] = "Already rank try edit button on this user";
                     //error => user already exist
                     return RedirectToAction(nameof(Index));
                 }
-                else
+                if (exist != null)
                 {
                     _context.Add(rank);
+
                 }
+                else
+                {
+                    TempData["AlreadyRank"] = "User not exists in system";
+                    //error => user already exist
+                    return RedirectToAction(nameof(Index));
+                }
+
                     await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

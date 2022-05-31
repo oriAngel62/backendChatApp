@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 //using API.Data;
 using Domain;
+using API.Data;
+using Microsoft.AspNetCore.SignalR;
 
 namespace API.Controllers
 {
@@ -14,23 +16,48 @@ namespace API.Controllers
     [Route("api/transfer")]
     public class TransferController : Controller
     {
-        //private readonly PomeloDB _context;
+        private readonly PomeloDB _context;
+        private readonly IHubContext<MyHub> myHub;
 
-        //public TransferController(PomeloDB context)
-        //{
-        //    _context = context;
-        //}
+        public TransferController(PomeloDB context, IHubContext<MyHub> myHub)
+        {
+            _context = context;
+            this.myHub = myHub;
+        }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Transfer([Bind("From,To,Content")] Message message)
-        //{
-        //    //if (ModelState.IsValid)
-        //    //{
-        //    //    _context..AddContact(contact);
-        //    //    return Ok();
-        //    //}
-        //    return BadRequest();
-        //}
+        [HttpPost]
+        [Route("/api/transfer")]
+        public async Task<IActionResult> Transfer([Bind("From,To,Content")] TransferReq message)
+        {
+            if (ModelState.IsValid)
+            {
+                //add from to (sent) id and login name 
+                if (ModelState.IsValid)
+                {
+                    message.From = message.From;
+                    message.To = message.To;
+                    //message.Created = DateTime.Now;
+                    Message m2 = new Message()
+                    {
+                        Type = "text",
+                        Content = message.Content,
+                        Sent = false,
+                        Created = DateTime.Now,
+                        From = message.From,
+                        To = message.To
+                    };
+                    _context.Message.Add(m2);
+                    //contactService.AddMessage(message);
+                    //contactService.AddMessage(m2);
+                    await _context.SaveChangesAsync();
+
+                    await myHub.Clients.All.SendAsync("NewContact", new TransferReq(message.From, message.To, message.Content));
+                    return Ok();
+                }
+                return BadRequest();
+            }
+            return BadRequest();
+        }
 
         //// GET: Transfer
         //public async Task<IActionResult> Index()

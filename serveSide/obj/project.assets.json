@@ -9490,23 +9490,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ori\\.nuget\\packages\\": {},
+    "C:\\Users\\David\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\serveSide\\MVC.csproj",
+      "projectUniqueName": "C:\\Users\\David\\Desktop\\backmain\\serveSide\\MVC.csproj",
       "projectName": "MVC",
-      "projectPath": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\serveSide\\MVC.csproj",
-      "packagesPath": "C:\\Users\\ori\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\serveSide\\obj\\",
+      "projectPath": "C:\\Users\\David\\Desktop\\backmain\\serveSide\\MVC.csproj",
+      "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\David\\Desktop\\backmain\\serveSide\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ori\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\David\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9520,8 +9520,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\ori\\Desktop\\aaa\\backendChatApp\\Domain\\Domain.csproj"
+            "C:\\Users\\David\\Desktop\\backmain\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\David\\Desktop\\backmain\\Domain\\Domain.csproj"
             }
           }
         }

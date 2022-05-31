@@ -9,10 +9,10 @@ using Domain;
 using Services;
 //using API.Data;
 using API.Migrations;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
-{
+{   [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class contactsController : Controller
@@ -30,6 +30,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult> Index()
         {
+            userLogIn = User.Claims.FirstOrDefault(claim => claim.Type == "UserId").Value;
             if (_context.Contact != null)
             {
                 List<Contact> c = await contactService.GetContacts(userLogIn);
@@ -37,7 +38,7 @@ namespace API.Controllers
                 {
                     return NotFound();
                 }
-                return Json(c);
+                return Ok(c);
 
             }
             return BadRequest();
@@ -46,8 +47,11 @@ namespace API.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> CreateContact([Bind("Id,NickName,Server")] Contact contact)
+        [Route("/api/contacts")]
+        public async Task<IActionResult> CreateContact([FromBody] Contact contact)
         {
+            // JWT DO THIS IN EVERY START OF FUNCTION
+            userLogIn = User.Claims.FirstOrDefault(claim => claim.Type == "UserId").Value;
             if (ModelState.IsValid)
             {
                 if(_context.Contact == null || contact == null)
@@ -77,6 +81,7 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> Details(string id)
         {
+            userLogIn = User.Claims.FirstOrDefault(claim => claim.Type == "UserId").Value;
             Contact c = await _context.Contact.FirstOrDefaultAsync(item => (item.ContactName == id) && item.UserName == userLogIn);
             return Json(c);
         }
@@ -84,15 +89,15 @@ namespace API.Controllers
         [HttpGet("{id}/messages")]
         public async Task<ActionResult> Messages(string id)
         {
+            userLogIn = User.Claims.FirstOrDefault(claim => claim.Type == "UserId").Value;
             List<Message> m = await _context.Message.Where(item => (item.From == userLogIn) && (item.To == id)).ToListAsync();
-
             if (m == null)
             {
                 return null;
             }
 
             //return Json(contactService.GetMessages(userLogIn, id));
-            return Json(m);
+            return Ok(m);
         }
 
 
@@ -100,6 +105,7 @@ namespace API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> EditContact(string id, [Bind("NickName,Server")] Contact contact)
         {
+            userLogIn = User.Claims.FirstOrDefault(claim => claim.Type == "UserId").Value;
             if (ModelState.IsValid)
             {
                 _context.Contact.Update(contact);
@@ -113,7 +119,7 @@ namespace API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteContact(string id)
         {
-
+            userLogIn = User.Claims.FirstOrDefault(claim => claim.Type == "UserId").Value;
             if (ModelState.IsValid)
             {
                 List<Contact> x = await _context.Contact.Where(item => (item.UserName == userLogIn) && (item.ContactName == id)).ToListAsync();
@@ -128,13 +134,15 @@ namespace API.Controllers
         [HttpGet("{id}/messages/{id2}")]
         public async Task<ActionResult> GetMeessage(string id, int id2)
         {
+            userLogIn = User.Claims.FirstOrDefault(claim => claim.Type == "UserId").Value;
             return Json(await _context.Message.FirstOrDefaultAsync(item => item.Id == id2));
         }
 
 
         [HttpPost("{id}/messages")]
-        public async Task<IActionResult> CreateMessage(string id, [Bind("Type, Content , Sent, Created")] Message message)
+        public async Task<IActionResult> CreateMessage(string id, [FromBody] Message message)
         {
+            userLogIn = User.Claims.FirstOrDefault(claim => claim.Type == "UserId").Value;
             //add from to (sent) id and login name 
             if (ModelState.IsValid)
             {
@@ -165,6 +173,7 @@ namespace API.Controllers
         [HttpPut("{id}/messages/{id2}")]
         public async Task<IActionResult> EditMessage(int id2, [Bind("Id, Type, Content , Sent")] Message message)
         {
+            userLogIn = User.Claims.FirstOrDefault(claim => claim.Type == "UserId").Value;
             if (ModelState.IsValid)
             {
                 message.Id = id2;
@@ -180,6 +189,7 @@ namespace API.Controllers
         [HttpDelete("{id}/messages/{id2}")]
         public async Task<IActionResult> DeleteMessage(int id2)
         {
+            userLogIn = User.Claims.FirstOrDefault(claim => claim.Type == "UserId").Value;
             if (ModelState.IsValid)
             {
                 Message x = await _context.Message.FindAsync(id2);
