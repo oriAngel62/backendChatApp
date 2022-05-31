@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain;
-//using API.Data;
+using API.Data;
 using Microsoft.EntityFrameworkCore;
 
+//service layer for handle logic function to the controllers.
 namespace Services
 {
     public class Service 
@@ -18,7 +19,6 @@ namespace Services
             _context = _context1;
 
         }
-
         public async Task<List<Contact>> GetContacts(string user)
         {
             List<Contact> c = await _context.Contact.Where(item => item.UserName == user).ToListAsync();
@@ -31,7 +31,6 @@ namespace Services
         }
         public async Task<Contact> GetContact(string userId, string id)
         {
-            //Contact c = await _context.Contact.FirstOrDefaultAsync(item => (item.Id == id) && item.UserName == userId);
             List<Contact> c = await _context.Contact.Where(item => (item.ContactName == id) && item.UserName == userId).ToListAsync();
             if (c == null)
             {
@@ -70,8 +69,6 @@ namespace Services
             {
                 return null;
             }
-            //using (var db = new PomeloDB())
-            //{
             _context.Contact.Add(contact);
             try
             {
@@ -82,9 +79,6 @@ namespace Services
                 throw;
             }
             return true;
-            //}
-            //db.Contact.Add(contact);
-            //db.SaveChanges();
         }
         public async void UpdateContact(Contact contact)
         {
@@ -106,8 +100,7 @@ namespace Services
 
             _context.Message.Add(message);
             await _context.SaveChangesAsync();
-            //db.Contact.Add(contact);
-            //db.SaveChanges();
+
         }
 
         public async void UpdateMessage(Message message)
@@ -128,13 +121,6 @@ namespace Services
         }
 
     }
-    //public void DeleteContact(Contact contact)
-    //{
-    //    using (var db = new PomeloDB())
-    //    {
-    //        db.Contact.Remove(contact);
-    //        db.SaveChanges();
-    //    }
 }
 
 
