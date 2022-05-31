@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BvXHCx3W9jVYnEA+Kni4PGkevswXkjgZkWLCNJZcbGnzrgDJ4+qtIf1WY/ds0Rey7aH54HT43eGNL1nwYGArcQ==",
+  "dgSpecHash": "8VsxCJQdwZFOkpvWwlr/yoYq7+oLXV0bdeqzax0N1YX//ldYTexw+rdFTHviiH7lbdpF/IE9MT/lGCVsV6pF1w==",
   "success": true,
   "projectFilePath": "C:\\Users\\ori\\Desktop\\backendChatApp\\serveSide\\MVC.csproj",
   "expectedPackageFiles": [
@@ -36,10 +36,10 @@
     "C:\\Users\\ori\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.5\\microsoft.entityframeworkcore.6.0.5.nupkg.sha512",
     "C:\\Users\\ori\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.5\\microsoft.entityframeworkcore.abstractions.6.0.5.nupkg.sha512",
     "C:\\Users\\ori\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.5\\microsoft.entityframeworkcore.analyzers.6.0.5.nupkg.sha512",
-    "C:\\Users\\ori\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.1\\microsoft.entityframeworkcore.design.6.0.1.nupkg.sha512",
+    "C:\\Users\\ori\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.5\\microsoft.entityframeworkcore.design.6.0.5.nupkg.sha512",
     "C:\\Users\\ori\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.5\\microsoft.entityframeworkcore.relational.6.0.5.nupkg.sha512",
     "C:\\Users\\ori\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.5\\microsoft.entityframeworkcore.sqlserver.6.0.5.nupkg.sha512",
-    "C:\\Users\\ori\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.1\\microsoft.entityframeworkcore.tools.6.0.1.nupkg.sha512",
+    "C:\\Users\\ori\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.5\\microsoft.entityframeworkcore.tools.6.0.5.nupkg.sha512",
     "C:\\Users\\ori\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\ori\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\ori\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

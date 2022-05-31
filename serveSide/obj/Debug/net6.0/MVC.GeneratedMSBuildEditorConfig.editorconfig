@@ -15,34 +15,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\ori\Desktop\backendChatApp\serveSide
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ori/Desktop/backendChatApp/serveSide/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ori/Desktop/backendChatApp/serveSide/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ori/Desktop/backendChatApp/serveSide/Views/Ranks1/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3MxXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ori/Desktop/backendChatApp/serveSide/Views/Ranks1/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3MxXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ori/Desktop/backendChatApp/serveSide/Views/Ranks1/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3MxXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ori/Desktop/backendChatApp/serveSide/Views/Ranks1/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3MxXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ori/Desktop/backendChatApp/serveSide/Views/Ranks1/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3MxXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/ori/Desktop/backendChatApp/serveSide/Views/Ranks/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmFua3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

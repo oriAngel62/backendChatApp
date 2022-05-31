@@ -31,9 +31,16 @@ namespace API.Controllers
             if (ModelState.IsValid)
             {
                 Random rnd = new Random();
-                var id = rnd.Next(0, 20000);
-                await _context.Contact.AddAsync(new Contact() { Id = id,  
-                 Last = null, LastDate = null, Server = req.Server, UserName = req.From});
+
+                Contact c = new Contact()
+                {
+                    ContactName = req.From,
+                    Last = null,
+                    LastDate = null,
+                    Server = req.Server,
+                    UserName = req.To
+                };
+                await _context.Contact.AddAsync(c);
                 await myHub.Clients.All.SendAsync("NewContact", new ContactInfo(req.From, req.Server));
                 return Ok();
         }
