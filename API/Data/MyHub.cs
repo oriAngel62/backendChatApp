@@ -8,5 +8,10 @@ namespace API.Data
         {
             await Clients.All.SendAsync("Receive", new SignalMessage(from, to, content));
         }
+
+        public async Task TellNewContact(string from, string server)
+        {
+            await Clients.All.SendAsync("NewContact", new NewContactItem(from, server));
+        }
     }
 }
