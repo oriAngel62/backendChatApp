@@ -7,16 +7,17 @@ using Domain;
 
     public class PomeloDB : DbContext
     {
-        public PomeloDB (DbContextOptions<PomeloDB> options)
-            : base(options)
-        {
-        }
+    public PomeloDB(DbContextOptions<PomeloDB> options)
+        : base(options)
+    {
+    }
 
-        public DbSet<Domain.Contact>? Contact { get; set; }
+    public DbSet<Domain.Contact>? Contact { get; set; }
 
-        public DbSet<Domain.User>? User { get; set; }
+    public DbSet<Domain.User>? User { get; set; }
 
-        public DbSet<Domain.Message>? Message { get; set; }
+    public DbSet<Domain.Message>? Message { get; set; }
+    public DbSet<Domain.UserToken>? UserToken { get; set; }
 
     public DbSet<Domain.Rank>? Rank { get; set; }
 
