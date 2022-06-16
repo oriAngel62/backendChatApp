@@ -34,6 +34,7 @@ namespace API.Controllers
             //return just the name without other field
             return Json(_context.User);
         }
+        //in the log in take the user and make token
 
         [HttpPost]
         [Route("/api/users/signin")]
@@ -65,9 +66,11 @@ namespace API.Controllers
 
         }
 
+        //add new user before token
+
         [HttpPost]
         [Route("/api/users")]
-        public async Task<ActionResult> AddNewUser([Bind("Id, NickName, Password, Server")] User user)
+        public async Task<ActionResult> AddNewUser([FromBody] User user)
         {
             _context.User.Add(user);
             await _context.SaveChangesAsync();
